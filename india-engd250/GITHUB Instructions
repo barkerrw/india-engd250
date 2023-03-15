@@ -1,0 +1,31 @@
+Instructions for how to use GitHub:
+
+1) Create a PAT (Personal-Access Token) on GitHub with ALL permissions checkmarked. 
+	(Make sure to save the key in a safe place on your computer so you can use it later!)
+2) Make a Repository in GitHub (Make sure it is PUBLIC)
+3) Add Contributor(s) to your repository!	
+4) In Eclipse, Window > Show View > Other > Git > Git Repositories
+5) Click Clone a Git Repository and add the clone to this view.
+6) Go to GitHub, click the green <> Code button.
+7) Copy the Repository HTTPS link!
+8) Paste the link in the URI section!
+9) Ensure the Username is correct from GitHub!
+10) Enter in the PAT key into the password section and check "Store in Secure Store"!
+11) Save the file where you want and click "Finish"
+12) File > New > Java Project
+13) Click on New Java Project in Package Explorer > Team > Share Project... > Select your repository
+14) Add a class to your Java Project, enter in something silly.
+
+DRY RUN
+15) Window > Show View > Other > Git > Git Staging
+16) Drag in changed class / file into Staged Changes.
+17) Write a commit message and click "Commit and Push"!
+	(If that doesn't work do the next thing)
+	18) Click on Java Project > Team > Remote > Push
+	19) Click Custom URI, enter in information
+	20) Next > Source ref. > main [branch] > Click "+ Add Spec" > Finish
+
+Notes:
+	
+	Make sure your email for GitHub is correct on GitHub (I can help)
+	
