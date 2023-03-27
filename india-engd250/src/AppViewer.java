@@ -26,6 +26,8 @@ public class AppViewer {
 		
 		Dimension buttonSize = new Dimension(150,200);
 		
+		JLabel label2 = new JLabel("Why is java so trash?");
+		
 		
 		label.setHorizontalAlignment(JLabel.CENTER);
 		
