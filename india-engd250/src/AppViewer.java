@@ -31,7 +31,7 @@ public class AppViewer {
 		
 		label.setHorizontalAlignment(JLabel.CENTER);
 		
-		
+		panel.add(label2);
 		
 		rural.setPreferredSize(buttonSize);
 		urban.setPreferredSize(buttonSize);
