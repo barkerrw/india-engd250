@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
@@ -65,9 +67,63 @@ public class AppViewer {
 		panel.setOpaque(true);
 		frame.repaint();
 		
+		north.addActionListener(new ActionListener() {
+		/**
+		 * 
+		 */
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		south.addActionListener(new ActionListener() {
+			/**
+			 * 
+			 */
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+		east.addActionListener(new ActionListener() {
+			/**
+			 * 
+			 */
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+		west.addActionListener(new ActionListener() {
+			/**
+			 * 
+			 */
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+		northeast.addActionListener(new ActionListener() {
+			/**
+			 * 
+			 */
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+		central.addActionListener(new ActionListener() {
+			/**
+			 * 
+			 */
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+		
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 	} // AppViewer
 } // end AppViewer
