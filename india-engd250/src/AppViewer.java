@@ -20,63 +20,49 @@ public class AppViewer {
 	int mapY;
 	
 	public AppViewer() {
+		
 		JFrame frame = new JFrame("Start Screen");
-		frame.setSize(WIDTH, HEIGHT);
-//		frame.setLayout(null);
+		frame.setSize(WIDTH, HEIGHT);		
 		
-		JPanel panel = new JPanel();
-		Dimension buttonSize = new Dimension(50,100);
-//		rural.setPreferredSize(buttonSize);
-//		urban.setPreferredSize(buttonSize);
-//		panel.add(label, BorderLayout.NORTH);
-		
+		JLayeredPane panel = frame.getLayeredPane();
 		
 		JLabel label = new JLabel("Where do you want to go?");
 		label.setHorizontalAlignment(JLabel.CENTER);
 		
-		map = new ImageIcon("C:/Users/altschmn/git/india-engd250/india-engd250/src/pictures/RegionMap.jpg");
+		map = new ImageIcon("src/pictures/RegionMap.jpg");
 		
 		JLabel mapHolder = new JLabel(map);
-		
-		
+
 		frame.add(mapHolder, BorderLayout.CENTER);
 		frame.add(label, BorderLayout.NORTH);
-		
 				
+		JButton north = new JButton("North");
+		JButton west = new JButton("West");
+		JButton south = new JButton("South");
+		JButton east = new JButton("East");
+		JButton northeast = new JButton("NorthEast");
+		JButton central = new JButton("Central");
 		
+		mapX = WIDTH/2;
+		mapY = HEIGHT/2;
+
+		north.setBounds(mapX, mapY, 100,20);
+		west.setBounds(mapX - 20, mapY + 20, 100,20);
+		east.setBounds(mapX + 50, mapY + 50, 100,20);
+		south.setBounds(mapX + 75, mapY - 75, 100,20);
+		northeast.setBounds(mapX + 100, mapY + 100, 100,20);
+		central.setBounds(mapX - 125, mapY + 125, 100,20);
 		
-//		JButton north = new JButton("North");
-//		JButton west = new JButton("West");
-//		JButton south = new JButton("South");
-//		JButton east = new JButton("East");
-//		JButton northeast = new JButton("NorthEast");
-//		JButton central = new JButton("Central");
-//		
-//		mapX = label.getX();
-//		mapY = label.getY();
-//
-//		
-//		north.setBounds(mapX, mapY, 50,100);
-//		west.setBounds(mapX + 20, mapY + 20, 50,100);
-//		east.setBounds(mapX + 50, mapY + 50, 50,100);
-//		south.setBounds(mapX + 75, mapY + 75, 50,100);
-//		northeast.setBounds(mapX + 100, mapY + 100, 50,100);
-//		central.setBounds(mapX + 125, mapY + 125, 50,100);
-//		
-//		panel.add(north);
-//		panel.add(south);
-//		panel.add(east);
-//		panel.add(west);
-//		panel.add(northeast);
-//		panel.add(central);
-		
-		
-//		panel.repaint();
+		panel.add(north,1);
+		panel.add(south,1);
+		panel.add(east,1);
+		panel.add(west,1);
+		panel.add(northeast,1);
+		panel.add(central,1);
+
 	
-	
-		
-//		frame.add(panel);
-		
+		panel.repaint();
+		panel.setOpaque(true);
 		frame.repaint();
 		
 		frame.setLocationRelativeTo(null);
