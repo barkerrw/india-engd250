@@ -5,6 +5,7 @@ import javax.swing.*;
  * Class: AppViewer
  * 
  * @author barkerrw <br>
+ * @author altschmn
  * 			Purpose: Used to displays screen(s)
  *
  */
@@ -13,31 +14,44 @@ public class AppViewer {
 	//set instance variables of screen size
 	public static final int WIDTH = 800;
 	public static final int HEIGHT = 600;
+	private ImageIcon map;
 	
 	public AppViewer() {
 		JFrame frame = new JFrame("Start Screen");
 		frame.setSize(WIDTH, HEIGHT);
 		
-		JPanel panel = new JPanel();
+//		JPanel panel = new JPanel();
 		JLabel label = new JLabel("Where do you want to go?");
-		JButton rural = new JButton("Rural");
-		JButton urban = new JButton("Urban");
+//		JButton rural = new JButton("Rural");
+//		JButton urban = new JButton("Urban");
 		
-		
-		Dimension buttonSize = new Dimension(150,200);
-	
-		label.setHorizontalAlignment(JLabel.CENTER);
-		
-		rural.setPreferredSize(buttonSize);
-		urban.setPreferredSize(buttonSize);
-		
+//		Dimension buttonSize = new Dimension(150,200);
+//	
+//		label.setHorizontalAlignment(JLabel.CENTER);
+//		
+//		rural.setPreferredSize(buttonSize);
+//		urban.setPreferredSize(buttonSize);
+//		
 //		panel.add(label, BorderLayout.NORTH);
+//		
+//		panel.add(rural);
+//		panel.add(urban);
 		
-		panel.add(rural);
-		panel.add(urban);
+		map = new ImageIcon("C:/Users/altschmn/git/india-engd250/india-engd250/src/pictures/RegionMap.jpg");
+		
+		JLabel mapHolder = new JLabel(map);
+//		mapHolder.setIcon(map);
+		
+		frame.add(mapHolder);
 		
 		
-		frame.add(panel, BorderLayout.SOUTH);
+		
+		
+		
+		
+		
+		
+		frame.add(mapHolder, BorderLayout.SOUTH);
 		
 		frame.add(label, BorderLayout.CENTER);
 		
