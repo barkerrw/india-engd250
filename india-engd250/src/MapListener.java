@@ -23,7 +23,6 @@ public class MapListener implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
 	} // actionPerformed
 
 } // end MapListener
