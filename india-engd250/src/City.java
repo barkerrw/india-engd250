@@ -1,3 +1,5 @@
+import javax.swing.ImageIcon;
+
 /**
  * 
  * @author barkerrw & altschmn <br>
@@ -34,7 +36,8 @@ public class City {
 	 * 
 	 * @return cityImage
 	 */
-	public String getImage() {
-		return cityImage;
+	public ImageIcon getImage() {
+		return new ImageIcon(cityImage);
 	} // getImage
+	
 } // end City
