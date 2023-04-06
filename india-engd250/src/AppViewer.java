@@ -48,12 +48,12 @@ public class AppViewer {
 		mapX = WIDTH/2;
 		mapY = HEIGHT/2;
 
-		north.setBounds(mapX, mapY, 100,20);
-		west.setBounds(mapX - 20, mapY + 20, 100,20);
-		east.setBounds(mapX + 50, mapY + 50, 100,20);
-		south.setBounds(mapX + 75, mapY - 75, 100,20);
-		northeast.setBounds(mapX + 100, mapY + 100, 100,20);
-		central.setBounds(mapX - 125, mapY + 125, 100,20);
+		north.setBounds(mapX - 75, mapY - 100, 75,20);
+		west.setBounds(mapX - 110, mapY + 30, 75,20);
+		east.setBounds(mapX + 35, mapY, 75,20);
+		south.setBounds(mapX - 90, mapY + 120, 75,20);
+		northeast.setBounds(mapX + 120, mapY - 60, 100,20);
+		central.setBounds(mapX - 65, mapY - 10, 85,20);
 		
 		panel.add(north,1);
 		panel.add(south,1);
