@@ -36,7 +36,7 @@ public class City {
 	 * 
 	 * @return cityImage
 	 */
-	public ImageIcon getImage() {
+	public ImageIcon getImage(String cityName) {
 		return new ImageIcon(cityImage);
 	} // getImage
 	
