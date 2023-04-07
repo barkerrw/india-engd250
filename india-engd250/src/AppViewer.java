@@ -20,12 +20,12 @@ public class AppViewer {
 	private int mapX;
 	private int mapY;
 	// create ArrayList<City> for each region
-	private ArrayList<City> northCities;
-	private ArrayList<City> westCities;
-	private ArrayList<City> southCities;
-	private ArrayList<City> eastCities;
-	private ArrayList<City> centralCities;
-	private ArrayList<City> northeastCities;
+	private ArrayList<City> northCities = new ArrayList<City>();
+	private ArrayList<City> westCities = new ArrayList<City>();
+	private ArrayList<City> southCities = new ArrayList<City>();
+	private ArrayList<City> eastCities = new ArrayList<City>();
+	private ArrayList<City> centralCities = new ArrayList<City>();
+	private ArrayList<City> northeastCities = new ArrayList<City>();
 
 	/**
 	 * ensures: a new AppViewer is created
@@ -75,13 +75,17 @@ public class AppViewer {
 		panel.repaint();
 		panel.setOpaque(true);
 		frame.repaint();
+		
+		
 		// add new City with name and image (from source)
-		northCities.add(new City("", ""));
+		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
 		westCities.add(new City("", ""));
 		southCities.add(new City("", ""));
 		eastCities.add(new City("", ""));
 		centralCities.add(new City("", ""));
 		northeastCities.add(new City("", ""));
+		
+		
 		// add MapListener to region buttons
 		north.addActionListener(new MapListener(northCities));
 		west.addActionListener(new MapListener(westCities));
