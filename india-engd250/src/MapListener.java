@@ -9,7 +9,7 @@ import java.util.ArrayList;
  *
  */
 public class MapListener implements ActionListener {
-	ArrayList<City> cityInfo;
+	private ArrayList<City> cities = new ArrayList<City>();
 	
 	/**
 	 * ensures: new MapListener is created
@@ -17,7 +17,7 @@ public class MapListener implements ActionListener {
 	 * @param cities the region's cities
 	 */
 	public MapListener(ArrayList<City> cities) {
-		this.cityInfo = cities;
+		this.cities = cities;
 	} // MapListener
 	
 	/**
@@ -25,8 +25,7 @@ public class MapListener implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println(cityInfo);
-		
+		CityViewer cityPage = new CityViewer(this.cities);
 	} // actionPerformed
 
 } // end MapListener

@@ -33,7 +33,7 @@ public class AppViewer {
 	public AppViewer() {
 
 		// instantiate frame with dimensions and features
-		JFrame frame = new JFrame("Start Screen");
+		JFrame frame = new JFrame("Region Selection Screen");
 		frame.setSize(WIDTH, HEIGHT);
 
 		JLayeredPane panel = frame.getLayeredPane();
@@ -84,7 +84,6 @@ public class AppViewer {
 		eastCities.add(new City("", ""));
 		centralCities.add(new City("", ""));
 		northeastCities.add(new City("", ""));
-		
 		
 		// add MapListener to region buttons
 		north.addActionListener(new MapListener(northCities));

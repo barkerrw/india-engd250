@@ -1,3 +1,5 @@
+import java.awt.Image;
+
 import javax.swing.ImageIcon;
 
 /**
@@ -36,8 +38,8 @@ public class City {
 	 * 
 	 * @return cityImage
 	 */
-	public ImageIcon getImage(String cityName) {
-		return new ImageIcon(cityImage);
+	public ImageIcon getImage() {
+		return new ImageIcon(new ImageIcon(cityImage).getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
 	} // getImage
 	
 } // end City
