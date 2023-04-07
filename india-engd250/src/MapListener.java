@@ -25,7 +25,7 @@ public class MapListener implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		CityViewer cityPage = new CityViewer(this.cities);
+		RegionViewer cityPage = new RegionViewer(this.cities);
 	} // actionPerformed
 
 } // end MapListener

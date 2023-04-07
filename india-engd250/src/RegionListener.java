@@ -1,7 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CityListener implements ActionListener{
+public class RegionListener implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

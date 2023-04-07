@@ -8,14 +8,14 @@ import javax.swing.JLabel;
  * @author barkerrw & altschmn <br>
  *
  */
-public class CityViewer {
+public class RegionViewer {
 	// set instance variables of screen size
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
 
 	private ArrayList<City> cities = new ArrayList<City>();
 
-	public CityViewer(ArrayList<City> cities) {
+	public RegionViewer(ArrayList<City> cities) {
 		this.cities = cities;
 		
 		JFrame cityFrame = new JFrame("City Selection Screen");
