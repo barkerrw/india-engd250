@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -24,7 +25,7 @@ public class RegionViewer {
 
 	private ArrayList<City> cities = new ArrayList<City>();
 
-	public RegionViewer(ArrayList<City> cities) {
+	public RegionViewer(ArrayList<City> cities){
 		this.cities = cities;
 		
 		JFrame cityFrame = new JFrame("City Selection Screen");
@@ -41,7 +42,12 @@ public class RegionViewer {
 			cityButton.setHorizontalTextPosition(SwingConstants.CENTER);
 			cityButton.setVerticalTextPosition(SwingConstants.BOTTOM);
 			
-			
+			try {
+				cityButton.addActionListener(new RegionListener(cityButton.getText()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			
 			cityPanel.add(cityButton);  
