@@ -1,7 +1,11 @@
+import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 
 /**
@@ -25,29 +29,33 @@ public class RegionViewer {
 		
 		JFrame cityFrame = new JFrame("City Selection Screen");
 		cityFrame.setSize(WIDTH, HEIGHT);
-//		cityFrame.setLayout(Borde);;
+		cityFrame.setLayout(null);
+		
+		JPanel cityPanel = new JPanel();
+//		cityPanel.setBorder(new EmptyBorder(100,100,100,100));
+		cityPanel.setBounds(100, 100, 600, 400);
+		cityPanel.setLayout(new GridLayout(0,2, 100,100));
 		
 		for (int i = 0; i < cities.size(); i++) {
-			JLabel cityLabel = new JLabel(cities.get(i).getName(), cities.get(i).getImage(), 0);
-			cityLabel.setHorizontalAlignment(JLabel.CENTER);
-			cityLabel.setHorizontalTextPosition(JLabel.CENTER);
-			cityLabel.setVerticalTextPosition(JLabel.BOTTOM);
-			
 			JButton cityButton = new JButton(cities.get(i).getName(), cities.get(i).getImage());
-			cityButton.setSize(buttonSize);
-//			cityButton.set
 			cityButton.setHorizontalTextPosition(SwingConstants.CENTER);
 			cityButton.setVerticalTextPosition(SwingConstants.BOTTOM);
 			
-			cityFrame.add(cityButton);
 			
-//			cityFrame.repaint();
+			
+			
+			cityPanel.add(cityButton);  
+				
 			
 //			cityFrame.add(cityLabel);
 		}
 		
+		
+		cityFrame.add(cityPanel);
+		cityFrame.repaint();
+		
 		cityFrame.setLocationRelativeTo(null);
 		cityFrame.setVisible(true);
-		cityFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		cityFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 } // end CityViewer
