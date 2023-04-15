@@ -42,6 +42,9 @@ public class RegionViewer {
 			cityButton.setHorizontalTextPosition(SwingConstants.CENTER);
 			cityButton.setVerticalTextPosition(SwingConstants.BOTTOM);
 			
+//			cityButton.addActionListener(new RegionListener(cityButton.getText()));
+
+			
 			try {
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
 			} catch (IOException e) {

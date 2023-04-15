@@ -23,6 +23,7 @@ public class RegionListener implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 		// TODO Auto-generated method stub
 
+//		System.out.println(this.cityName);
 		System.out.print(this.cityFile.singleOutput());
 	}
 
