@@ -1,37 +1,75 @@
-import java.util.ArrayList;
+import java.awt.BorderLayout;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.text.*;
 
-/**
- * 
- * @author barkerrw & altschmn <br>
- *
- */
+
 public class CityViewer {
-	// set instance variables of screen size
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
-
-	private ArrayList<City> cities = new ArrayList<City>();
-
-	public CityViewer(ArrayList<City> cities) {
-		this.cities = cities;
+	private String cityInfo;
+	private String cityName;
+	
+	public CityViewer(String name, String info) {
+		this.cityInfo = info;
+		this.cityName = name;
 		
-		JFrame cityFrame = new JFrame("City Selection Screen");
+		JFrame cityFrame = new JFrame(this.cityName);
 		cityFrame.setSize(WIDTH, HEIGHT);
+//		cityFrame.setLayout(null);
+//		
+//		JPanel cityPanel = new JPanel();
+//		cityPanel.setBounds(50, 50, 700, 500);
 		
-		for (int i = 0; i < cities.size(); i++) {
-			JLabel cityLabel = new JLabel(cities.get(i).getName(), cities.get(i).getImage(), 0);
-			cityLabel.setHorizontalAlignment(JLabel.CENTER);
-			cityLabel.setHorizontalTextPosition(JLabel.CENTER);
-			cityLabel.setVerticalTextPosition(JLabel.BOTTOM);
-			
-			cityFrame.add(cityLabel);
-		}
+
+		
+		JTextPane textPanel = new JTextPane();
+		
+		
+		
+		StyleContext context = new StyleContext();
+	    StyledDocument document = new DefaultStyledDocument(context);
+
+	    Style style = context.getStyle(StyleContext.DEFAULT_STYLE);
+	    StyleConstants.setAlignment(style, StyleConstants.ALIGN_LEFT);
+	    StyleConstants.setFontSize(style, 14);
+	    StyleConstants.setSpaceAbove(style, 4);
+	    StyleConstants.setSpaceBelow(style, 4);
+		
+	    try {
+	        document.insertString(document.getLength(), this.cityInfo, style);
+	      } catch (BadLocationException badLocationException) {
+	        System.err.println("Oops");
+	      }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	    JTextPane textPane = new JTextPane(document);
+	    textPane.setEditable(false);
+	    JScrollPane scrollPane = new JScrollPane(textPane);
+//	    content.add(scrollPane, BorderLayout.CENTER);
+
+		
+//		cityPanel.add(scrollPane, BorderLayout.CENTER);
+		
+	    cityFrame.add(scrollPane, BorderLayout.CENTER);
+//		cityFrame.add(cityPanel);
+		cityFrame.repaint();
 		
 		cityFrame.setLocationRelativeTo(null);
 		cityFrame.setVisible(true);
-		cityFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		cityFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		
 	}
-} // end CityViewer
+	
+	
+	
+}
