@@ -79,6 +79,12 @@ public class AppViewer {
 		
 		// add new City with name and image (from source)
 		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		
 		westCities.add(new City("", ""));
 		southCities.add(new City("", ""));
 		eastCities.add(new City("", ""));
