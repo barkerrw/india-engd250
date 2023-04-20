@@ -24,7 +24,7 @@ public class RegionListener implements ActionListener{
 		// TODO Auto-generated method stub
 
 //		System.out.println(this.cityName);
-		System.out.print(this.cityFile.singleOutput());
+//		System.out.print(this.cityFile.singleOutput());
 		
 		CityViewer cityInfo = new CityViewer(this.cityName, this.cityFile.singleOutput());
 		
