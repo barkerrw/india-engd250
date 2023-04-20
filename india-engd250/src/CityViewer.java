@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -8,10 +9,10 @@ import javax.swing.text.*;
 public class CityViewer {
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
-	private String cityInfo;
+	private ArrayList<String> cityInfo;
 	private String cityName;
 	
-	public CityViewer(String name, String info) {
+	public CityViewer(String name, ArrayList<String> info) {
 		this.cityInfo = info;
 		this.cityName = name;
 		
@@ -37,13 +38,14 @@ public class CityViewer {
 	    StyleConstants.setSpaceAbove(style, 4);
 	    StyleConstants.setSpaceBelow(style, 4);
 		
-	    try {
-	        document.insertString(document.getLength(), this.cityInfo, style);
-	      } catch (BadLocationException badLocationException) {
-	        System.err.println("Oops");
-	      }
+	    for (int i = 0; i < this.cityInfo.size(); i ++) {
+		    try {
+		        document.insertString(document.getLength(), this.cityInfo.get(i) + "\n", style);
+		      } catch (BadLocationException badLocationException) {
+		        System.err.println("Oops");
+		      }
 		
-		
+	    }
 		
 		
 		
