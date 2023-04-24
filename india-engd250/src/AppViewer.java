@@ -35,10 +35,12 @@ public class AppViewer {
 		// instantiate frame with dimensions and features
 		JFrame frame = new JFrame("Region Selection Screen");
 		frame.setSize(WIDTH, HEIGHT);
+		frame.getContentPane().setBackground(Color.WHITE);
 
 		JLayeredPane panel = frame.getLayeredPane();
 
-		JLabel label = new JLabel("Where do you want to go?");
+		JLabel label = new JLabel("Hello Traveler, where do you want to go?");
+		label.setFont(new Font (label.getText(), Font.BOLD, 20));
 		label.setHorizontalAlignment(JLabel.CENTER);
 
 		map = new ImageIcon("src/pictures/RegionMap.jpg");
@@ -58,12 +60,12 @@ public class AppViewer {
 		mapX = WIDTH / 2;
 		mapY = HEIGHT / 2;
 
-		north.setBounds(mapX - 75, mapY - 100, 75, 20);
-		west.setBounds(mapX - 110, mapY + 30, 75, 20);
-		east.setBounds(mapX + 35, mapY, 75, 20);
-		south.setBounds(mapX - 90, mapY + 120, 75, 20);
-		northeast.setBounds(mapX + 120, mapY - 60, 100, 20);
-		central.setBounds(mapX - 65, mapY - 10, 85, 20);
+		north.setBounds(mapX - 95, mapY - 90, 75, 20);
+		west.setBounds(mapX - 110, mapY + 40, 75, 20);
+		east.setBounds(mapX + 35, mapY+10, 75, 20);
+		south.setBounds(mapX - 90, mapY + 130, 75, 20);
+		northeast.setBounds(mapX + 120, mapY - 50, 100, 20);
+		central.setBounds(mapX - 65, mapY, 85, 20);
 		// add buttons to panel
 		panel.add(north, 1);
 		panel.add(south, 1);

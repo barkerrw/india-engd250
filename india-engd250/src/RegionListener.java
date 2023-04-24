@@ -23,7 +23,7 @@ public class RegionListener implements ActionListener{
 //		System.out.println(this.cityName);
 //		System.out.print(this.cityFile.singleOutput());
 		
-		CityViewer cityInfo = new CityViewer(this.cityName, this.cityFile.singleOutput());
+		CityViewer cityInfo = new CityViewer(this.cityName, this.cityFile.inputRows);
 		
 	}
 
