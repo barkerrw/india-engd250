@@ -6,7 +6,9 @@ import javax.swing.JFrame;
 
 public class BackButton {
 
+	
 	private JFrame frame;
+	
 
 	public BackButton(JFrame frame) {
 		this.frame = frame;
@@ -22,3 +24,4 @@ public class BackButton {
 		frame.add(back);
 	}
 }
+
