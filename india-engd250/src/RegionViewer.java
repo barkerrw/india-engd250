@@ -1,6 +1,8 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,8 +22,8 @@ public class RegionViewer {
 	private static final int HEIGHT = 600;
 	private static final int BUTTON_WIDTH = 100;
 	private static final int BUTTON_HEIGHT = 120;
-	private static final int MAX_SPACE = 50;
-	private static final int COLUMNS = 3;
+	private static final int MAX_SPACE = 100;
+	private static final int COLUMNS = 2;
 	
 	Dimension buttonSize = new Dimension(BUTTON_WIDTH,BUTTON_HEIGHT);
 
@@ -35,16 +37,27 @@ public class RegionViewer {
 		JFrame cityFrame = new JFrame("City Selection Screen");
 		cityFrame.setSize(WIDTH, HEIGHT);
 		cityFrame.setLayout(null);
+		cityFrame.getContentPane().setBackground(Color.WHITE);
+		
+		JLabel label = new JLabel("Hello Traveler, where do you want to go?");
+		label.setFont(new Font (label.getText(), Font.BOLD, 20));
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setLocation(250, 50);
+		
+		cityFrame.add(label,BorderLayout.NORTH);
 		
 		JPanel cityPanel = new JPanel();
 //		cityPanel.setBorder(new EmptyBorder(100,100,100,100));
-		cityPanel.setBounds(MAX_SPACE, MAX_SPACE, WIDTH - (2*MAX_SPACE), HEIGHT - (2*MAX_SPACE) );
-		cityPanel.setLayout(new GridLayout(0,COLUMNS, MAX_SPACE,gap));
+		cityPanel.setBounds(MAX_SPACE,MAX_SPACE, WIDTH - (2*MAX_SPACE), HEIGHT - (3*MAX_SPACE) );
+		cityPanel.setLayout(new GridLayout(0,COLUMNS, MAX_SPACE,MAX_SPACE));
+		cityPanel.setBackground(Color.WHITE);
 		
 		for (int i = 0; i < cities.size(); i++) {
 			JButton cityButton = new JButton(cities.get(i).getName(), cities.get(i).getImage());
+			cityButton.setFont(new Font (cities.get(i).getName(), Font.BOLD, 20));
 			cityButton.setHorizontalTextPosition(SwingConstants.CENTER);
 			cityButton.setVerticalTextPosition(SwingConstants.BOTTOM);
+			cityButton.setBackground(new Color(245,245,245));
 			
 //			cityButton.addActionListener(new RegionListener(cityButton.getText()));
 
@@ -64,7 +77,12 @@ public class RegionViewer {
 		}
 		
 		
+		
+		
 		cityFrame.add(cityPanel);
+		
+		
+		cityFrame.revalidate();
 		cityFrame.repaint();
 		
 		cityFrame.setLocationRelativeTo(null);

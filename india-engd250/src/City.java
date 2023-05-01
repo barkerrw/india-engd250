@@ -12,6 +12,7 @@ public class City {
 
 	private String cityName;
 	private String cityImage;
+	private static final int PIC_SIZE = 200;
 
 	/**
 	 * ensures: new City can be created
@@ -39,7 +40,7 @@ public class City {
 	 * @return cityImage
 	 */
 	public ImageIcon getImage() {
-		return new ImageIcon(new ImageIcon(cityImage).getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+		return new ImageIcon(new ImageIcon(cityImage).getImage().getScaledInstance(PIC_SIZE, PIC_SIZE, Image.SCALE_DEFAULT));
 	} // getImage
 	
 } // end City

@@ -1,7 +1,10 @@
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
@@ -17,6 +20,8 @@ public abstract class CityPageLayout{
 	private static final int HEIGHT = 600;
 	private ArrayList<String> cityInfo;
 	private String cityName;
+	private StyleContext context;
+	
 	
 	public static final String plainStyleName = "PlainStyle";
 	public static final String titleStyleName = "Title";
@@ -29,38 +34,74 @@ public abstract class CityPageLayout{
 	this.cityInfo = info;
 	this.cityName = name;
 	
-	StyleContext context = new StyleContext();
+	this.context = new StyleContext();
     StyledDocument document = new DefaultStyledDocument(context);
     Style defaultStyle = context.getStyle(StyleContext.DEFAULT_STYLE);
    
-	createDocStyles(context);
+	createDocStyles();
 	
 	
 	}
 	
 	
 	
-	public void addPlainInfo(StyledDocument document, Style style, String stuff) {
+	public void addPlainInfo(StyledDocument document, String stuff) {
 	    try {
-	        document.insertString(document.getLength(), stuff + "\n", style);
+	        document.insertString(document.getLength(), stuff + "\n", this.context.getStyle(plainStyleName));
 	      } catch (BadLocationException badLocationException) {
 	        System.err.println("Oops");
 	      }
 	}
 	
+	public void addHeadingInfo(StyledDocument document, String stuff) {
+	    try {
+	        document.insertString(document.getLength(), stuff + "\n", this.context.getStyle(headingStyleName));
+	      } catch (BadLocationException badLocationException) {
+	        System.err.println("Oops");
+	      }
+	}	
+	
+	public void addTitleInfo(StyledDocument document, String stuff) {
+	    try {
+	        document.insertString(document.getLength(), stuff + "\n", this.context.getStyle(titleStyleName));
+	      } catch (BadLocationException badLocationException) {
+	        System.err.println("Oops");
+	      }
+	}
+	
+	public void addPicInfo(StyledDocument document, String stuff) {
 		
-	public void createDocStyles(StyleContext context) {
-		Style defaultStyle = context.getStyle(StyleContext.DEFAULT_STYLE);
+		String picName = stuff.substring(1);
+		
+		String file = "src/pictures/" + picName + ".jpg";
+		
+		Style labelStyle = context.getStyle(StyleContext.DEFAULT_STYLE);
+
+	    Icon icon = new ImageIcon(file);
+	    JLabel label = new JLabel(icon);
+	    StyleConstants.setComponent(labelStyle, label);
+		
+	    try {
+	        document.insertString(document.getLength(), "Ignored", labelStyle);
+	      } catch (BadLocationException badLocationException) {
+	        System.err.println("Oops");
+	      }
+	}
+	
+	
+	public void createDocStyles() {
+		Style defaultStyle = this.context.getStyle(StyleContext.DEFAULT_STYLE);
 		    
-	    Style titleStyle = context.addStyle(titleStyleName, defaultStyle);
+	    Style titleStyle = this.context.addStyle(titleStyleName, defaultStyle);
 	    StyleConstants.setAlignment(titleStyle, StyleConstants.ALIGN_LEFT);
-	    StyleConstants.setFontSize(titleStyle, 20);
+	    StyleConstants.setFontSize(titleStyle, 26);
 	    StyleConstants.setBold(titleStyle, true);
+	    StyleConstants.setUnderline(titleStyle, true);
 	    StyleConstants.setLeftIndent(titleStyle, INDENT);
 	    StyleConstants.setSpaceAbove(titleStyle, 4);
 	    StyleConstants.setSpaceBelow(titleStyle, 4);
 		
-	    Style headingStyle = context.addStyle(headingStyleName, defaultStyle);
+	    Style headingStyle = this.context.addStyle(headingStyleName, defaultStyle);
 	    StyleConstants.setAlignment(headingStyle, StyleConstants.ALIGN_LEFT);
 	    StyleConstants.setFontSize(headingStyle, 18);
 	    StyleConstants.setLeftIndent(headingStyle, INDENT);
@@ -69,7 +110,7 @@ public abstract class CityPageLayout{
 	    StyleConstants.setSpaceAbove(headingStyle, 4);
 	    StyleConstants.setSpaceBelow(headingStyle, 4);
 	  
-	    Style plainStyle = context.addStyle(plainStyleName, defaultStyle);
+	    Style plainStyle = this.context.addStyle(plainStyleName, defaultStyle);
 	    StyleConstants.setAlignment(plainStyle, StyleConstants.ALIGN_LEFT);
 	    StyleConstants.setFontSize(plainStyle, 14);
 	    StyleConstants.setLeftIndent(plainStyle, INDENT);
