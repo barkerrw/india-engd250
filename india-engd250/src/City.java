@@ -13,7 +13,7 @@ public class City {
 	private String cityName;
 	private String cityImage;
 	private static final int PIC_SIZE = 200;
-	private static final int SMALL_SIZE = 100;
+	private static final int SMALL_SIZE = 50;
 
 	/**
 	 * ensures: new City can be created

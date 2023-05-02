@@ -1,26 +1,61 @@
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class SortCity {
 	
-	private static ArrayList<City> north;
-	private static ArrayList<City> south;
-	private static ArrayList<City> east;
-	private static ArrayList<City> west;
-	private static ArrayList<City> central;
-	private static ArrayList<City> northeast;
+	
+//	private static ArrayList<City> allCities;
+	
+	private static HashMap<City,String> allCities;
+	
+	public SortCity(HashMap<City,String> cities) {
+		this.allCities = cities;
+	}
 	
 	
-	
-	public SortCity(ArrayList<City> northCities, ArrayList<City> southCities, ArrayList<City> eastCities, ArrayList<City> westCities, ArrayList<City> centralCities, ArrayList<City> northeastCities) {
-		this.north = northCities;
-		this.south = southCities;
-		this.east = eastCities;
-		this.west = westCities;
-		this.central = centralCities;
-		this.northeast = northeastCities;
+	class alphabetical implements Comparator<City>{
+
+		@Override
+		public int compare(City o1, City o2) {
+			// TODO Auto-generated method stub
+			return o1.getName().compareTo(o2.getName());
+		}
 		
 	}
 	
+	
+	
+	
+	public ArrayList<City> sortEachRegion(HashMap<City,String> cities, String targetRegion) {
+		ArrayList<City> sortedRegion = new ArrayList<City>();
+		
+		for(Entry<City, String> place: cities.entrySet()) {
+			if(place.getValue().equals(targetRegion)) {
+				sortedRegion.add(place.getKey());
+			}
+		}
+		
+		sortedRegion.sort(new alphabetical());
+		
+		return sortedRegion;
+	}
+	
+	
+	public ArrayList<City> sortAll(HashMap<City,String> cities) {
+		ArrayList<City> sortedCities = new ArrayList<City>();
+		
+		for(Entry<City, String> place: cities.entrySet()) {
+			sortedCities.add(place.getKey());
+		}
+		
+		
+		sortedCities.sort(new alphabetical());
+		
+		
+		return sortedCities;
+	}
 	
 	
 	
