@@ -34,7 +34,7 @@ public class CityViewer extends CityPageLayout {
 	    
 //	    System.out.println(this.cityInfo.size());
 	    
-	    this.createDocStyles(context);
+	    this.createDocStyles();
 	    
 	    /**
 	     * the text file must have the following format or it WILL NOT format correctly on output:
@@ -55,22 +55,32 @@ public class CityViewer extends CityPageLayout {
 	     * Food
 	     * food info
 	     */
-	    this.addPlainInfo(document, context.getStyle(titleStyleName), cityInfo.get(0)); // title
+	    this.addTitleInfo(document, cityInfo.get(0)); // title
 	    
-	    for (int i = 1; i < 5; i ++) { // generic info about the city
-	    	this.addPlainInfo(document, context.getStyle(plainStyleName), cityInfo.get(i));
+	    for (int i = 1; i < cityInfo.size(); i ++) { // generic info about the city
+	    	if (cityInfo.get(i).equals("Places of Interest") || cityInfo.get(i).equals("Food")) {
+	    		this.addHeadingInfo(document, cityInfo.get(i));
+	    	}
+	    	
+//	    	else if (cityInfo.get(i).charAt(0) == '*'){
+//	    		System.out.println(cityInfo.get(i));
+////	    		this.addPicInfo(document, cityInfo.get(i));
+//	    	}
+	    	else {
+	    		this.addPlainInfo(document, cityInfo.get(i));
+	    	}
 	    }
 	    
-	    this.addPlainInfo(document, context.getStyle(headingStyleName), cityInfo.get(5)); // places of interest heading
-	    
-	    for (int i = 6; i < 13; i ++) { // generic info about the city
-	    	this.addPlainInfo(document, context.getStyle(plainStyleName), cityInfo.get(i));// places info
-	    }
-	    
-	    this.addPlainInfo(document, context.getStyle(headingStyleName), cityInfo.get(13)); // food heading
-	    this.addPlainInfo(document, context.getStyle(plainStyleName), cityInfo.get(14));
-	    
-	    
+//	    this.addPlainInfo(document, cityInfo.get(5)); // places of interest heading
+//	    
+//	    for (int i = 6; i < 13; i ++) { // generic info about the city
+//	    	this.addPlainInfo(document, context.getStyle(plainStyleName), cityInfo.get(i));// places info
+//	    }
+//	    
+//	    this.addPlainInfo(document, context.getStyle(headingStyleName), cityInfo.get(13)); // food heading
+//	    this.addPlainInfo(document, context.getStyle(plainStyleName), cityInfo.get(14));
+//	    
+//	    
 //	    this.addPlainInfo(document, context.getStyle(titleStyleName), cityInfo.get(0));
 //	    this.addPlainInfo(document, context.getStyle(titleStyleName), cityInfo.get(0));
 //	    this.addPlainInfo(document, context.getStyle(titleStyleName), cityInfo.get(0));

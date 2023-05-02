@@ -5,9 +5,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class BackButton {
+
 	
 	private JFrame frame;
 	
+
 	public BackButton(JFrame frame) {
 		this.frame = frame;
 		JButton back = new JButton("Back");
@@ -18,7 +20,8 @@ public class BackButton {
 				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			}
 		});
-		
+
 		frame.add(back);
 	}
 }
+

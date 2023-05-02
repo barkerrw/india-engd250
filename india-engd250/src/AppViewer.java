@@ -81,17 +81,18 @@ public class AppViewer {
 		
 		// add new City with name and image (from source)
 		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		westCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
+		southCities.add(new City("Bengaluru", "src/pictures/LalbaghGlasshouse.jpg"));
+		eastCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
+		centralCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
+		northeastCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
 		
-		westCities.add(new City("", ""));
-		southCities.add(new City("", ""));
-		eastCities.add(new City("", ""));
-		centralCities.add(new City("", ""));
-		northeastCities.add(new City("", ""));
+		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		westCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
+		southCities.add(new City("Bengaluru", "src/pictures/LalbaghGlasshouse.jpg"));
+		eastCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
+		centralCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
+		northeastCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
 		
 		// add MapListener to region buttons
 		north.addActionListener(new MapListener(northCities));
