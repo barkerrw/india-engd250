@@ -56,10 +56,10 @@ public class AppViewer {
 		JButton east = new JButton("East");
 		JButton northeast = new JButton("NorthEast");
 		JButton central = new JButton("Central");
-
+		// set bounds of map for button access
 		mapX = WIDTH / 2;
 		mapY = HEIGHT / 2;
-
+		// set button dimensions and location
 		north.setBounds(mapX - 95, mapY - 90, 75, 20);
 		west.setBounds(mapX - 110, mapY + 40, 75, 20);
 		east.setBounds(mapX + 35, mapY+10, 75, 20);
@@ -73,11 +73,10 @@ public class AppViewer {
 		panel.add(west, 1);
 		panel.add(northeast, 1);
 		panel.add(central, 1);
-
+		// re-instantiate panel on top, make it visible
 		panel.repaint();
 		panel.setOpaque(true);
 		frame.repaint();
-		
 		
 		// add new City with name and image (from source)
 		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
@@ -101,7 +100,7 @@ public class AppViewer {
 		east.addActionListener(new MapListener(eastCities));
 		central.addActionListener(new MapListener(centralCities));
 		northeast.addActionListener(new MapListener(northeastCities));
-
+		// set close operation for frame
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

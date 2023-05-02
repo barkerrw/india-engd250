@@ -14,21 +14,29 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
 
+/**
+ * 
+ * @author barkerrw & altschmn <br>
+ *		   Purpose: Class for formatting text file output
+ */
 public abstract class CityPageLayout{
-	
+	// set instance variables
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
 	private ArrayList<String> cityInfo;
 	private String cityName;
 	private StyleContext context;
 	
-	
 	public static final String plainStyleName = "PlainStyle";
 	public static final String titleStyleName = "Title";
 	public static final String headingStyleName = "HeadingStyle";
 	public static final int INDENT = 50;
 	 
-	
+	/**
+	 * ensures: new CityPageLayout can be made
+	 * @param name is the name of the City
+	 * @param info is 
+	 */
 	public CityPageLayout(String name, ArrayList<String> info) {
 
 	this.cityInfo = info;

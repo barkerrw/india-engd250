@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
  *
  */
 public class City {
-
+	// set instance variables
 	private String cityName;
 	private String cityImage;
 	private static final int PIC_SIZE = 200;

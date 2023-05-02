@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -76,10 +78,16 @@ public class RegionViewer {
 //			cityFrame.add(cityLabel);
 		}
 		
+		JButton back = new JButton("Back");
+		back.setBounds(700, 20, 75, 20);
+		cityFrame.add(back);
+		back.addActionListener(new ActionListener() {
 
-		
-//		cityFrame.add(new BackButton(cityFrame));
-
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cityFrame.dispose();
+			}	
+		});
 		
 		cityFrame.add(cityPanel);
 		
