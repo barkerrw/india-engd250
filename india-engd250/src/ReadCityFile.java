@@ -41,15 +41,5 @@ public class ReadCityFile {
 		return true;
 	}
 	
-	/**
-	 *  turns the information arraylist into one massive string
-	 * @return one single gigantic string
-	 */
-	public String singleOutput() {
-		String massiveString = String.join("\n", inputRows);
-		
-		return massiveString;
-	}
-	
 
 }

@@ -1,4 +1,6 @@
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -109,6 +111,16 @@ public class CityViewer extends CityPageLayout {
 //	    }
 //		
 //		
+	    JButton back = new JButton("Back");
+		back.setBounds(700, 20, 75, 20);
+		cityFrame.add(back);
+		back.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cityFrame.dispose();
+			}	
+		});
 		
 	    JTextPane textPane = new JTextPane(document);
 	    textPane.setEditable(false);
