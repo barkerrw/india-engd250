@@ -26,7 +26,7 @@ public class SortCityViewer {
 	private static final int BUTTON_WIDTH = 140;
 	private static final int BUTTON_HEIGHT = 100;
 	private static final int MAX_SPACE = 100;
-	private static final int COLUMNS = 3;
+	private static final int COLUMNS = 6;
 	
 	Dimension buttonSize = new Dimension(BUTTON_WIDTH,BUTTON_HEIGHT);
 
@@ -44,49 +44,12 @@ public class SortCityViewer {
 		}
 		
 		
-		int gap = MAX_SPACE / (this.allCitiesList.size() / COLUMNS);
 		
 		JFrame cityFrame = new JFrame("All Cities Screen");
 		cityFrame.setSize(WIDTH, HEIGHT);
 		cityFrame.setLayout(null);
 		cityFrame.getContentPane().setBackground(Color.WHITE);
 		
-		JLabel label = new JLabel("Hello Traveler, where do you want to go?");
-		label.setFont(new Font (label.getText(), Font.BOLD, 20));
-		label.setHorizontalAlignment(JLabel.CENTER);
-		label.setLocation(250, 50);
-		
-		cityFrame.add(label,BorderLayout.NORTH);
-		
-		JPanel cityPanel = new JPanel();
-//		cityPanel.setBorder(new EmptyBorder(100,100,100,100));
-		cityPanel.setBounds(0,MAX_SPACE/2, WIDTH, HEIGHT - MAX_SPACE);
-		cityPanel.setLayout(new GridLayout(0,COLUMNS, 30,10));
-		cityPanel.setBackground(Color.WHITE);
-		
-		for (int i = 0; i < allCitiesList.size(); i++) {
-			JButton cityButton = new JButton(allCitiesList.get(i).getName(), allCitiesList.get(i).getSmallImage());
-//			cityButton.setFont(new Font (allCitiesList.get(i).getName(), Font.BOLD, 20));
-			cityButton.setHorizontalTextPosition(SwingConstants.RIGHT);
-			cityButton.setVerticalTextPosition(SwingConstants.CENTER);
-			cityButton.setBackground(new Color(245,245,245));
-			
-//			cityButton.addActionListener(new RegionListener(cityButton.getText()));
-
-			
-			try {
-				cityButton.addActionListener(new RegionListener(cityButton.getText()));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			
-			cityPanel.add(cityButton);  
-				
-			
-//			cityFrame.add(cityLabel);
-		}
 		
 		JButton back = new JButton("Back");
 		back.setBounds(700, 20, 75, 20);
@@ -99,7 +62,7 @@ public class SortCityViewer {
 			}	
 		});
 		
-		cityFrame.add(cityPanel);
+		cityFrame.add(alphabetizedList(this.allCitiesList));
 		
 		
 		cityFrame.revalidate();
@@ -109,4 +72,90 @@ public class SortCityViewer {
 		cityFrame.setVisible(true);
 		cityFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
-} // end CityViewer
+	
+	
+	public JPanel alphabetizedList(ArrayList<City> cities) {
+		JPanel alphabetPanel = new JPanel();
+		int gap = MAX_SPACE / (2* this.allCitiesList.size() / COLUMNS);
+		
+		alphabetPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
+		alphabetPanel.setLayout(new GridLayout(0,COLUMNS/2, gap,10));
+		alphabetPanel.setBackground(Color.WHITE);
+		
+		for (int i = 0; i < allCitiesList.size(); i++) {
+			JButton cityButton = new JButton(allCitiesList.get(i).getName(), allCitiesList.get(i).getSmallImage());
+//			cityButton.setFont(new Font (allCitiesList.get(i).getName(), Font.BOLD, 20));
+			cityButton.setHorizontalTextPosition(SwingConstants.RIGHT);
+			cityButton.setVerticalTextPosition(SwingConstants.CENTER);
+			cityButton.setBackground(new Color(245,245,245));
+			
+			try {
+				cityButton.addActionListener(new RegionListener(cityButton.getText()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+					
+			alphabetPanel.add(cityButton);  
+
+		}
+		
+		return alphabetPanel;
+	}
+	
+	
+	public JPanel regionGroup() {
+		JPanel regionPanel = new JPanel();
+		int gap = MAX_SPACE / (2* this.allCitiesList.size() / COLUMNS);
+		
+		regionPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
+		regionPanel.setLayout(new GridLayout(1,COLUMNS, 10,0));
+		regionPanel.setBackground(Color.WHITE);
+		
+		JPanel northPanel = new JPanel();
+		northPanel.setLayout(new GridLayout(1,0,0,10));
+		northPanel.setBackground(Color.WHITE);
+		
+		
+		
+		for (int i = 0; i < allCitiesList.size(); i++) {
+			JButton cityButton = new JButton(allCitiesList.get(i).getName(), allCitiesList.get(i).getSmallImage());
+//			cityButton.setFont(new Font (allCitiesList.get(i).getName(), Font.BOLD, 20));
+			cityButton.setHorizontalTextPosition(SwingConstants.CENTER);
+			cityButton.setVerticalTextPosition(SwingConstants.BOTTOM);
+			cityButton.setBackground(new Color(245,245,245));
+			
+			try {
+				cityButton.addActionListener(new RegionListener(cityButton.getText()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+					
+			regionPanel.add(cityButton);  
+
+		}
+		
+		return regionPanel;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+} // end SortCityViewer

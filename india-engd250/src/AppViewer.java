@@ -29,7 +29,9 @@ public class AppViewer {
 	private ArrayList<City> centralCities = new ArrayList<City>();
 	private ArrayList<City> northeastCities = new ArrayList<City>();
 	
-	private HashMap<City,String> allCities = new HashMap<City,String>();
+	private HashMap<City,String> allCitiesMap = new HashMap<City,String>();
+	private ArrayList<City> allCitiesList = new ArrayList<City>();
+	private int[] regionListSize = new int[6];
 
 
 	/**
@@ -112,23 +114,38 @@ public class AppViewer {
 		
 		// create a mega HashMap of all the cities
 		for (int i = 0; i < northCities.size(); i ++) {
-			this.allCities.put(northCities.get(i), "north");
+			this.allCitiesMap.put(northCities.get(i), "north");
 		}
 		for (int i = 0; i < southCities.size(); i ++) {
-			this.allCities.put(southCities.get(i), "south");
+			this.allCitiesMap.put(southCities.get(i), "south");
 		}
 		for (int i = 0; i < eastCities.size(); i ++) {
-			this.allCities.put(eastCities.get(i), "east");
+			this.allCitiesMap.put(eastCities.get(i), "east");
 		}
 		for (int i = 0; i < westCities.size(); i ++) {
-			this.allCities.put(westCities.get(i), "west");
+			this.allCitiesMap.put(westCities.get(i), "west");
 		}
 		for (int i = 0; i < centralCities.size(); i ++) {
-			this.allCities.put(centralCities.get(i), "central");
+			this.allCitiesMap.put(centralCities.get(i), "central");
 		}
 		for (int i = 0; i < northeastCities.size(); i ++) {
-			this.allCities.put(northeastCities.get(i), "northeast");
+			this.allCitiesMap.put(northeastCities.get(i), "northeast");
 		}
+		
+		
+		//make a mega arraylist
+		this.allCitiesList.addAll(northCities);
+		this.regionListSize[0] = northCities.size();
+		this.allCitiesList.addAll(southCities);
+		this.regionListSize[1] = southCities.size();
+		this.allCitiesList.addAll(eastCities);
+		this.regionListSize[2] = eastCities.size();
+		this.allCitiesList.addAll(westCities);
+		this.regionListSize[3] =westCities.size();
+		this.allCitiesList.addAll(centralCities);
+		this.regionListSize[4] =centralCities.size();
+		this.allCitiesList.addAll(northeastCities);
+		this.regionListSize[5] =northeastCities.size();
 		
 		
 		// add MapListener to region buttons
@@ -139,7 +156,11 @@ public class AppViewer {
 		central.addActionListener(new MapListener(centralCities));
 		northeast.addActionListener(new MapListener(northeastCities));
 		
-		allCities.addActionListener(new MapListener2(this.allCities));
+		allCities.addActionListener(new MapListener2(this.allCitiesMap));
+		
+		
+		
+		
 		
 		
 		// set close operation for frame
