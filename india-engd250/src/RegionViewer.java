@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-
 /**
  * 
  * @author barkerrw & altschmn <br>
+ *         Purpose: Used to display region screen with images and buttons
  *
  */
 public class RegionViewer {
@@ -26,58 +26,53 @@ public class RegionViewer {
 	private static final int BUTTON_HEIGHT = 120;
 	private static final int MAX_SPACE = 100;
 	private static final int COLUMNS = 2;
-	
-	Dimension buttonSize = new Dimension(BUTTON_WIDTH,BUTTON_HEIGHT);
+	// set button sizes
+	Dimension buttonSize = new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT);
 
 	private ArrayList<City> cities = new ArrayList<City>();
 
-	public RegionViewer(ArrayList<City> cities){
+	/**
+	 * ensures: a new RegionViewer can be created
+	 * 
+	 * @param cities is an arraylist of cities for the region
+	 */
+	public RegionViewer(ArrayList<City> cities) {
 		this.cities = cities;
-		
-		int gap = MAX_SPACE / (this.cities.size() / COLUMNS);
-		
+		// make frame
 		JFrame cityFrame = new JFrame("City Selection Screen");
 		cityFrame.setSize(WIDTH, HEIGHT);
 		cityFrame.setLayout(null);
 		cityFrame.getContentPane().setBackground(Color.WHITE);
-		
-		JLabel label = new JLabel("Hello Traveler, where do you want to go?");
-		label.setFont(new Font (label.getText(), Font.BOLD, 20));
+		// make label with text
+		JLabel label = new JLabel("Hello, where do you want to go?");
+		label.setFont(new Font(label.getText(), Font.BOLD, 20));
 		label.setHorizontalAlignment(JLabel.CENTER);
 		label.setLocation(250, 50);
-		
-		cityFrame.add(label,BorderLayout.NORTH);
-		
+		// add label to frame
+		cityFrame.add(label, BorderLayout.NORTH);
+		// make panel
 		JPanel cityPanel = new JPanel();
-//		cityPanel.setBorder(new EmptyBorder(100,100,100,100));
-		cityPanel.setBounds(MAX_SPACE,MAX_SPACE, WIDTH - (2*MAX_SPACE), HEIGHT - (3*MAX_SPACE) );
-		cityPanel.setLayout(new GridLayout(0,COLUMNS, MAX_SPACE,MAX_SPACE));
+		cityPanel.setBounds(MAX_SPACE, MAX_SPACE, WIDTH - (2 * MAX_SPACE), HEIGHT - (3 * MAX_SPACE));
+		cityPanel.setLayout(new GridLayout(0, COLUMNS, MAX_SPACE, MAX_SPACE));
 		cityPanel.setBackground(Color.WHITE);
-		
+		// add city buttons and images to panel
 		for (int i = 0; i < cities.size(); i++) {
 			JButton cityButton = new JButton(cities.get(i).getName(), cities.get(i).getImage());
-			cityButton.setFont(new Font (cities.get(i).getName(), Font.BOLD, 20));
+			cityButton.setFont(new Font(cities.get(i).getName(), Font.BOLD, 20));
 			cityButton.setHorizontalTextPosition(SwingConstants.CENTER);
 			cityButton.setVerticalTextPosition(SwingConstants.BOTTOM);
-			cityButton.setBackground(new Color(245,245,245));
-			
-//			cityButton.addActionListener(new RegionListener(cityButton.getText()));
+			cityButton.setBackground(new Color(245, 245, 245));
 
-			
-			try {
+			try { // IOException from ReadCityFile method
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			} catch (IOException e) { // throw error
 				e.printStackTrace();
-			}
-			
-			
-			cityPanel.add(cityButton);  
-				
-			
-//			cityFrame.add(cityLabel);
-		}
-		
+			} // catch
+				// add buttons to panel
+			cityPanel.add(cityButton);
+		} // for
+
+		// add back button
 		JButton back = new JButton("Back");
 		back.setBounds(700, 20, 75, 20);
 		cityFrame.add(back);
@@ -86,17 +81,16 @@ public class RegionViewer {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cityFrame.dispose();
-			}	
-		});
-		
+			} // actionPerformed
+		}); // ActionListener
+
+		// add panel to frame
 		cityFrame.add(cityPanel);
-		
-		
 		cityFrame.revalidate();
 		cityFrame.repaint();
-		
+
 		cityFrame.setLocationRelativeTo(null);
 		cityFrame.setVisible(true);
 		cityFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	}
-} // end CityViewer
+	} // RegionViewer
+} // end RegionViewer

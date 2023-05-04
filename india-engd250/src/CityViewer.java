@@ -7,111 +7,58 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.*;
 
-
+/**
+ * 
+ * @author barkerrw & altschmn <br>
+ *         Purpose: Used to display city screen with imported text file
+ *
+ */
 public class CityViewer extends CityPageLayout {
+	// set instance variables
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
 	private ArrayList<String> cityInfo;
 	private String cityName;
-	
 
-	public CityViewer(String name, ArrayList<String> info){
-		super(name,info);
-		
+	/**
+	 * ensures: anew CityViewer can be created
+	 * 
+	 * @param name is the city name 
+	 * @param info is an arraylist of information from text file
+	 */
+	public CityViewer(String name, ArrayList<String> info) {
+		super(name, info);
 		this.cityInfo = info;
 		this.cityName = name;
-		
+
+		// make frame for cities
 		JFrame cityFrame = new JFrame(this.cityName);
 		cityFrame.setSize(WIDTH, HEIGHT);
-//		cityFrame.setLayout(null);
-//		
-//		JPanel cityPanel = new JPanel();
-//		cityPanel.setBounds(50, 50, 700, 500);
-		
 
-		
-		JTextPane textPanel = new JTextPane();
+		// set font style
 		StyleContext context = new StyleContext();
-	    StyledDocument document = new DefaultStyledDocument(context);
-	    
-//	    System.out.println(this.cityInfo.size());
-	    
-	    this.createDocStyles();
-	    
-	    /**
-	     * the text file must have the following format or it WILL NOT format correctly on output:
-	     * 
-	     * Title
-	     * (empty line)
-	     * population
-	     * primary language
-	     * (empty line)
-	     * Places of Interest 
-	     * (empty line)
-	     * Place name 1
-	     * place info
-	     * (empty line)
-	     * place name 2
-	     * place info 2
-	     * (empty line)
-	     * Food
-	     * food info
-	     */
-	    this.addTitleInfo(document, cityInfo.get(0)); // title
-	    
-	    for (int i = 1; i < cityInfo.size(); i ++) { // generic info about the city
-	    	if (cityInfo.get(i).equals("Places of Interest") || cityInfo.get(i).equals("Food")) {
-	    		this.addHeadingInfo(document, cityInfo.get(i));
-	    	}
-	    	
+		StyledDocument document = new DefaultStyledDocument(context);
+		this.createDocStyles();
+		// title style from CityPageLayout
+		this.addTitleInfo(document, cityInfo.get(0));
+
+		for (int i = 1; i < cityInfo.size(); i++) { // generic info about the city
+			if (cityInfo.get(i).equals("Places of Interest") || cityInfo.get(i).equals("Food")) {
+				this.addHeadingInfo(document, cityInfo.get(i));
+			} // if
+			
+			// adds images (not implemented)
 //	    	else if (cityInfo.get(i).charAt(0) == '*'){
 //	    		System.out.println(cityInfo.get(i));
 ////	    		this.addPicInfo(document, cityInfo.get(i));
 //	    	}
-	    	else {
-	    		this.addPlainInfo(document, cityInfo.get(i));
-	    	}
-	    }
-	    
-//	    this.addPlainInfo(document, cityInfo.get(5)); // places of interest heading
-//	    
-//	    for (int i = 6; i < 13; i ++) { // generic info about the city
-//	    	this.addPlainInfo(document, context.getStyle(plainStyleName), cityInfo.get(i));// places info
-//	    }
-//	    
-//	    this.addPlainInfo(document, context.getStyle(headingStyleName), cityInfo.get(13)); // food heading
-//	    this.addPlainInfo(document, context.getStyle(plainStyleName), cityInfo.get(14));
-//	    
-//	    
-//	    this.addPlainInfo(document, context.getStyle(titleStyleName), cityInfo.get(0));
-//	    this.addPlainInfo(document, context.getStyle(titleStyleName), cityInfo.get(0));
-//	    this.addPlainInfo(document, context.getStyle(titleStyleName), cityInfo.get(0));
-//	    this.addPlainInfo(document, context.getStyle(titleStyleName), cityInfo.get(0));
-//
-//	    
+			else {
+				this.addPlainInfo(document, cityInfo.get(i));
+			} // else
+		} // end for
 
-		
-/**
- * the stuff below should be inherited from the city page layout class
- */
-
-//	    Style style = context.getStyle(StyleContext.DEFAULT_STYLE);
-//	    StyleConstants.setAlignment(style, StyleConstants.ALIGN_LEFT);
-//	    StyleConstants.setFontSize(style, 14);
-//	    StyleConstants.setSpaceAbove(style, 4);
-//	    StyleConstants.setSpaceBelow(style, 4);
-//		
-//	    for (int i = 0; i < this.cityInfo.size(); i ++) {
-//		    try {
-//		        document.insertString(document.getLength(), this.cityInfo.get(i) + "\n", style);
-//		      } catch (BadLocationException badLocationException) {
-//		        System.err.println("Oops");
-//		      }
-//		
-//	    }
-//		
-//		
-	    JButton back = new JButton("Back");
+		// adds back button
+		JButton back = new JButton("Back");
 		back.setBounds(700, 20, 75, 20);
 		cityFrame.add(back);
 		back.addActionListener(new ActionListener() {
@@ -119,28 +66,23 @@ public class CityViewer extends CityPageLayout {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cityFrame.dispose();
-			}	
-		});
-		
-	    JTextPane textPane = new JTextPane(document);
-	    textPane.setEditable(false);
-	    JScrollPane scrollPane = new JScrollPane(textPane);
-//	    content.add(scrollPane, BorderLayout.CENTER);
+			} // actionPerformed
+		}); // ActionListener
 
-		
+		// create panes
+		JTextPane textPane = new JTextPane(document);
+		textPane.setEditable(false);
+		JScrollPane scrollPane = new JScrollPane(textPane); // not used
+//	    content.add(scrollPane, BorderLayout.CENTER);
 //		cityPanel.add(scrollPane, BorderLayout.CENTER);
-		
-	    cityFrame.add(scrollPane, BorderLayout.CENTER);
+
+		// add panes to frame
+		cityFrame.add(scrollPane, BorderLayout.CENTER);
 //		cityFrame.add(cityPanel);
 		cityFrame.repaint();
 		
 		cityFrame.setLocationRelativeTo(null);
 		cityFrame.setVisible(true);
 		cityFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
-		
-	}
-	
-	
-	
-}
+	} //CityViewer
+} // end CityViewer

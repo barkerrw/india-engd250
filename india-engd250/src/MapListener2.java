@@ -6,8 +6,7 @@ import java.util.HashMap;
 /**
  * 
  * @author barkerrw & altschmn <br>
- * 		   Purpose: Used to track button inputs from user
- * 			specifically for the all city button.
+ * 		   Purpose: Used to track button inputs from user specifically for the all city button.
  *
  */
 public class MapListener2 implements ActionListener {
@@ -15,7 +14,7 @@ public class MapListener2 implements ActionListener {
 	private HashMap<City,String> allCities = new HashMap<City,String>();
 	
 	/**
-	 * ensures: new MapListener is createds
+	 * ensures: new MapListener is created
 	 * 
 	 * @param cities the region's cities
 	 */

@@ -12,7 +12,6 @@ import javax.swing.*;
  *
  */
 public class AppViewer {
-
 	// set instance variables of screen size
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
@@ -35,7 +34,7 @@ public class AppViewer {
 
 
 	/**
-	 * ensures: a new AppViewer is created
+	 * ensures: a new AppViewer can be created
 	 */
 	public AppViewer() {
 
@@ -133,7 +132,7 @@ public class AppViewer {
 		}
 		
 		
-		//make a mega arraylist
+		// make a mega arraylist
 		this.allCitiesList.addAll(northCities);
 		this.regionListSize[0] = northCities.size();
 		this.allCitiesList.addAll(southCities);
@@ -157,11 +156,6 @@ public class AppViewer {
 		northeast.addActionListener(new MapListener(northeastCities));
 		
 		allCities.addActionListener(new MapListener2(this.allCitiesMap));
-		
-		
-		
-		
-		
 		
 		// set close operation for frame
 		frame.setLocationRelativeTo(null);
