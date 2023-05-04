@@ -104,12 +104,19 @@ public class AppViewer {
 		centralCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
 		northeastCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
 		
-		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-		westCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
-		southCities.add(new City("Bengaluru", "src/pictures/LalbaghGlasshouse.jpg"));
-		eastCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
-		centralCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
-		northeastCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
+		northCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
+		westCities.add(new City("Bengaluru", "src/pictures/LalbaghGlasshouse.jpg"));
+		southCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
+		eastCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
+		centralCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
+		northeastCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		
+		northCities.add(new City("Bengaluru", "src/pictures/LalbaghGlasshouse.jpg"));
+		westCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
+		southCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
+		eastCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
+		centralCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
+		northeastCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
 		
 		// create a mega HashMap of all the cities
 		for (int i = 0; i < northCities.size(); i ++) {
@@ -155,7 +162,7 @@ public class AppViewer {
 		central.addActionListener(new MapListener(centralCities));
 		northeast.addActionListener(new MapListener(northeastCities));
 		
-		allCities.addActionListener(new MapListener2(this.allCitiesMap));
+		allCities.addActionListener(new MapListener2(this.allCitiesList, this.regionListSize));
 		
 		// set close operation for frame
 		frame.setLocationRelativeTo(null);

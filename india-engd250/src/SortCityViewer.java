@@ -32,17 +32,52 @@ public class SortCityViewer {
 
 	private HashMap<City,String> citiesMap = new HashMap<City,String>();
 	private ArrayList<City> allCitiesList = new ArrayList<City>();
+	private ArrayList<City> northCities = new ArrayList<City>();
+	private ArrayList<City> westCities = new ArrayList<City>();
+	private ArrayList<City> southCities = new ArrayList<City>();
+	private ArrayList<City> eastCities = new ArrayList<City>();
+	private ArrayList<City> centralCities = new ArrayList<City>();
+	private ArrayList<City> northeastCities = new ArrayList<City>();
 
-	public SortCityViewer(HashMap<City,String> cities){
-		this.citiesMap = cities;
+	public SortCityViewer(ArrayList<City> cities, int[] sizes){   //HashMap<City,String> 
 		
-		SortCity sorter = new SortCity(this.citiesMap);
-		this.allCitiesList = sorter.sortAll(citiesMap);
 		
-		for(City entry : allCitiesList) {
+		SortCity sorter = new SortCity(cities, sizes);
+			
+		this.allCitiesList = sorter.sortList(cities);
+		
+		this.northCities = sorter.getNorth();
+		this.southCities = sorter.getSouth();
+		this.eastCities = sorter.getEast();
+		this.westCities = sorter.getWest();
+		this.centralCities = sorter.getCentral();
+		this.northeastCities = sorter.getNortheast();
+		
+		for(City entry : northCities) {
 			System.out.println(entry.getName());
 		}
+		System.out.println();
 		
+		for(City entry : southCities) {
+			System.out.println(entry.getName());
+		}
+		System.out.println();
+		for(City entry : eastCities) {
+			System.out.println(entry.getName());
+		}
+		System.out.println();
+		for(City entry : westCities) {
+			System.out.println(entry.getName());
+		}
+		System.out.println();
+		for(City entry : centralCities) {
+			System.out.println(entry.getName());
+		}
+		System.out.println();
+		for(City entry : northeastCities) {
+			System.out.println(entry.getName());
+		}
+		System.out.println();
 		
 		
 		JFrame cityFrame = new JFrame("All Cities Screen");
@@ -106,6 +141,8 @@ public class SortCityViewer {
 	
 	public JPanel regionGroup() {
 		JPanel regionPanel = new JPanel();
+		
+		
 		int gap = MAX_SPACE / (2* this.allCitiesList.size() / COLUMNS);
 		
 		regionPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
