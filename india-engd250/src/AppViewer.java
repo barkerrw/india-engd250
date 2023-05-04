@@ -1,5 +1,7 @@
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.swing.*;
 
 /**
@@ -26,6 +28,11 @@ public class AppViewer {
 	private ArrayList<City> eastCities = new ArrayList<City>();
 	private ArrayList<City> centralCities = new ArrayList<City>();
 	private ArrayList<City> northeastCities = new ArrayList<City>();
+	
+	private HashMap<City,String> allCitiesMap = new HashMap<City,String>();
+	private ArrayList<City> allCitiesList = new ArrayList<City>();
+	private int[] regionListSize = new int[6];
+
 
 	/**
 	 * ensures: a new AppViewer is created
@@ -56,6 +63,9 @@ public class AppViewer {
 		JButton east = new JButton("East");
 		JButton northeast = new JButton("NorthEast");
 		JButton central = new JButton("Central");
+		
+		JButton allCities = new JButton("See All Cities");
+		
 		// set bounds of map for button access
 		mapX = WIDTH / 2;
 		mapY = HEIGHT / 2;
@@ -66,6 +76,11 @@ public class AppViewer {
 		south.setBounds(mapX - 90, mapY + 130, 75, 20);
 		northeast.setBounds(mapX + 120, mapY - 50, 100, 20);
 		central.setBounds(mapX - 65, mapY, 85, 20);
+		
+		allCities.setBounds(mapX + 200, mapY+150, 120, 20);
+		
+		
+		
 		// add buttons to panel
 		panel.add(north, 1);
 		panel.add(south, 1);
@@ -73,6 +88,10 @@ public class AppViewer {
 		panel.add(west, 1);
 		panel.add(northeast, 1);
 		panel.add(central, 1);
+		
+		panel.add(allCities, 1);
+		
+		
 		// re-instantiate panel on top, make it visible
 		panel.repaint();
 		panel.setOpaque(true);
@@ -93,6 +112,42 @@ public class AppViewer {
 		centralCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
 		northeastCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
 		
+		// create a mega HashMap of all the cities
+		for (int i = 0; i < northCities.size(); i ++) {
+			this.allCitiesMap.put(northCities.get(i), "north");
+		}
+		for (int i = 0; i < southCities.size(); i ++) {
+			this.allCitiesMap.put(southCities.get(i), "south");
+		}
+		for (int i = 0; i < eastCities.size(); i ++) {
+			this.allCitiesMap.put(eastCities.get(i), "east");
+		}
+		for (int i = 0; i < westCities.size(); i ++) {
+			this.allCitiesMap.put(westCities.get(i), "west");
+		}
+		for (int i = 0; i < centralCities.size(); i ++) {
+			this.allCitiesMap.put(centralCities.get(i), "central");
+		}
+		for (int i = 0; i < northeastCities.size(); i ++) {
+			this.allCitiesMap.put(northeastCities.get(i), "northeast");
+		}
+		
+		
+		//make a mega arraylist
+		this.allCitiesList.addAll(northCities);
+		this.regionListSize[0] = northCities.size();
+		this.allCitiesList.addAll(southCities);
+		this.regionListSize[1] = southCities.size();
+		this.allCitiesList.addAll(eastCities);
+		this.regionListSize[2] = eastCities.size();
+		this.allCitiesList.addAll(westCities);
+		this.regionListSize[3] =westCities.size();
+		this.allCitiesList.addAll(centralCities);
+		this.regionListSize[4] =centralCities.size();
+		this.allCitiesList.addAll(northeastCities);
+		this.regionListSize[5] =northeastCities.size();
+		
+		
 		// add MapListener to region buttons
 		north.addActionListener(new MapListener(northCities));
 		west.addActionListener(new MapListener(westCities));
@@ -100,6 +155,14 @@ public class AppViewer {
 		east.addActionListener(new MapListener(eastCities));
 		central.addActionListener(new MapListener(centralCities));
 		northeast.addActionListener(new MapListener(northeastCities));
+		
+		allCities.addActionListener(new MapListener2(this.allCitiesMap));
+		
+		
+		
+		
+		
+		
 		// set close operation for frame
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
