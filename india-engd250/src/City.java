@@ -12,7 +12,7 @@ public class City {
 	// set instance variables
 	private String cityName;
 	private String cityImage;
-	private static final int PIC_SIZE = 200;
+	private static final int PIC_SIZE = 150;
 	private static final int SMALL_SIZE = 50;
 
 	/**
