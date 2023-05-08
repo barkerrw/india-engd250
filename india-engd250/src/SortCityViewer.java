@@ -19,7 +19,7 @@ import javax.swing.border.EmptyBorder;
  * @author barkerrw & altschmn <br>
  *
  */
-public class SortCityViewer {
+public class SortCityViewer extends SortCity{
 	// set instance variables of screen size
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
@@ -40,62 +40,49 @@ public class SortCityViewer {
 	private ArrayList<City> northeastCities = new ArrayList<City>();
 	
 
-	public SortCityViewer(ArrayList<City> cities, int[] sizes){   //HashMap<City,String> 
+	public SortCityViewer(ArrayList<City> nCities, ArrayList<City> sCities, ArrayList<City> eCities, ArrayList<City> wCities, ArrayList<City> cCities, ArrayList<City> neCities) {   //HashMap<City,String> 
 		
-		for (int i = 0; i < cities.size(); i ++) {
-			if(i < sizes[0]) {
-				this.northCities.add(cities.get(i));
-			}
-			else if (i >= sizes[0] && i < sizes[1]){
-				this.southCities.add(cities.get(i));
-			}
-			else if (i >= sizes[1] && i < sizes[2]){
-				this.eastCities.add(cities.get(i));
-			}
-			else if (i >= sizes[2] && i < sizes[3]){
-				this.westCities.add(cities.get(i));
-			}
-			else if (i >= sizes[3] && i < sizes[4]){
-				this.centralCities.add(cities.get(i));
-			}
-			else {
-				this.northeastCities.add(cities.get(i));
-			}
-		}
+		super(nCities, sCities, eCities, wCities, cCities, neCities);
+		
+		this.allCitiesList = super.getFullList();
+//		this.northCities = super.getNorth();
+//		this.southCities = super.getSouth();
+//		this.eastCities = super.getEast();
+//		this.westCities = super.getWest();
+//		this.centralCities = super.getCentral();
+//		this.northeastCities = super.getNortheast();
+		
+		this.northCities = super.sortList(nCities);
+		this.southCities = super.sortList(sCities);
+		this.eastCities = super.sortList(eCities);
+		this.westCities = super.sortList(wCities);
+		this.centralCities = super.sortList(cCities);
+		this.northeastCities = super.sortList(neCities);
+		this.allCitiesList = super.sortList(allCitiesList);
 		
 		
 		
-		SortCity sorter = new SortCity(cities, sizes);
-			
-		this.allCitiesList = sorter.sortList(cities);
 		
 		
 		
-//		ArrayList<City> north = sorter.getNorth();
-//		ArrayList<City> south = sorter.getSouth();
-//		ArrayList<City> east = sorter.getEast();
-//		ArrayList<City> west = sorter.getWest();
-//		ArrayList<City> central = sorter.getCentral();
-//		ArrayList<City> northeast = sorter.getNortheast();
+		
 //		
-//		this.northCities = sorter.sortList(northCities);
-//		this.southCities = sorter.sortList(southCities);
-//		this.eastCities = sorter.sortList(eastCities);
-//		this.westCities = sorter.sortList(westCities);
-//		this.centralCities = sorter.sortList(centralCities);
-//		this.northeastCities = sorter.sortList(northeastCities);
 	
 		
-		int size = sizes[0];
-		for(int i = 1; i < 6; i ++) {
-			if (sizes[i] > size) {
-				size = sizes[i];
-			}
-		}
-		this.maxSize = size;
+//		int size = sizes[0];
+//		for(int i = 1; i < 6; i ++) {
+//			if (sizes[i] > size) {
+//				size = sizes[i];
+//			}
+//		}
+		this.maxSize = 3;
+		
+		
+		
+		
 		System.out.println("All Cities:  ");
 		for(City entry : allCitiesList) {
-			System.out.print(entry.getName());
+			System.out.println(entry.getName());
 		}
 		
 		System.out.println("\n\n By Region:  ");
@@ -134,10 +121,23 @@ public class SortCityViewer {
 		System.out.println();
 		System.out.println();
 		
+		
+		
+		
+		
 		JFrame cityFrame = new JFrame("All Cities Screen");
 		cityFrame.setSize(WIDTH, HEIGHT);
 		cityFrame.setLayout(null);
 		cityFrame.getContentPane().setBackground(Color.WHITE);
+		
+		JPanel cityPanel = new JPanel();
+		cityPanel.setBounds(MAX_SPACE/8,MAX_SPACE, WIDTH - MAX_SPACE/3, HEIGHT );
+		cityPanel.add(alphabetizedList());
+		cityPanel.setVisible(true);
+		cityPanel.setBackground(Color.WHITE);
+		
+		cityFrame.add(cityPanel);
+		
 		
 		
 		JButton back = new JButton("Back");
@@ -151,8 +151,47 @@ public class SortCityViewer {
 			}	
 		});
 		
+		
+		JButton region = new JButton("Sort by Region");
+		region.setBounds(400, 20, 125, 20);
+		cityFrame.add(region);
+		region.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+//				cityFrame.remove(cityPanel);
+				
+				cityPanel.removeAll();
+				cityPanel.add(regionGroup());
+				
+//				cityFrame.add(cityPanel);
+				cityFrame.revalidate();
+				cityFrame.repaint();
+			}	
+		});
+		
+		
+		JButton alphabet = new JButton("Sort by Alphabetical");
+		alphabet.setBounds(200, 20, 150, 20);
+		cityFrame.add(alphabet);
+		alphabet.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+//				cityFrame.removeAll();
+//				cityFrame.add(alphabetizedList());
+				
+				cityPanel.removeAll();
+				cityPanel.add(alphabetizedList());
+				cityFrame.revalidate();
+				cityFrame.repaint();
+			}	
+		});
+		
+		
+		
 //		cityFrame.add(regionGroup());
-		cityFrame.add(alphabetizedList(this.allCitiesList));
+//		cityFrame.add(alphabetizedList());
 		
 		cityFrame.revalidate();
 		cityFrame.repaint();
@@ -163,11 +202,11 @@ public class SortCityViewer {
 	}
 	
 	
-	public JPanel alphabetizedList(ArrayList<City> cities) {
+	public JPanel alphabetizedList() {
 		JPanel alphabetPanel = new JPanel();
 		int gap = MAX_SPACE / (2* this.allCitiesList.size() / COLUMNS);
 		
-		alphabetPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
+//		alphabetPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
 		alphabetPanel.setLayout(new GridLayout(0,COLUMNS/2, gap,10));
 		alphabetPanel.setBackground(Color.WHITE);
 		
@@ -196,7 +235,7 @@ public class SortCityViewer {
 	public JPanel regionGroup() {
 		JPanel regionPanel = new JPanel();
 		
-		regionPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
+//		regionPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
 		regionPanel.setLayout(new GridLayout(COLUMNS,maxSize + 1, 10,10));
 		regionPanel.setBackground(Color.WHITE);
 		

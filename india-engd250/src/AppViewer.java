@@ -162,7 +162,7 @@ public class AppViewer {
 		central.addActionListener(new MapListener(centralCities));
 		northeast.addActionListener(new MapListener(northeastCities));
 		
-		allCities.addActionListener(new MapListener2(this.allCitiesList, this.regionListSize));
+		allCities.addActionListener(new MapListener2(northCities, southCities, eastCities, westCities, centralCities, northeastCities));
 		
 		// set close operation for frame
 		frame.setLocationRelativeTo(null);
