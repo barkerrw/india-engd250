@@ -19,34 +19,49 @@ public class SortCity {
 	private ArrayList<City> west = new ArrayList<City>();
 	private ArrayList<City> central = new ArrayList<City>();
 	private ArrayList<City> northeast = new ArrayList<City>();
-	private ArrayList<City> allCities;
+	private ArrayList<City> allCities = new ArrayList<City>();
 	
 	
-	public SortCity(ArrayList<City> fullCityList, int[] regionSize) {
+	public SortCity(ArrayList<City> nCities, ArrayList<City> sCities, ArrayList<City> eCities, ArrayList<City> wCities, ArrayList<City> cCities, ArrayList<City> neCities) {
 		
-		this.allCities = fullCityList;
+		this.north = nCities;
+		this.south = sCities;
+		this.east = eCities;
+		this.west = wCities;
+		this.central = cCities;
+		this.northeast = neCities;
 		
-		for (int i = 0; i < allCities.size(); i ++) {
-			if(i < regionSize[0]) {
-				this.north.add(allCities.get(i));
-			}
-			else if (i >= regionSize[0] && i < regionSize[1]){
-				this.south.add(allCities.get(i));
-			}
-			else if (i >= regionSize[1] && i < regionSize[2]){
-				this.east.add(allCities.get(i));
-			}
-			else if (i >= regionSize[2] && i < regionSize[3]){
-				this.west.add(allCities.get(i));
-			}
-			else if (i >= regionSize[3] && i < regionSize[4]){
-				this.central.add(allCities.get(i));
-			}
-			else {
-				this.northeast.add(allCities.get(i));
-			}
-		}
+		this.allCities.addAll(north);
+		this.allCities.addAll(south);
+		this.allCities.addAll(east);
+		this.allCities.addAll(west);
+		this.allCities.addAll(central);
+		this.allCities.addAll(northeast);
 		
+		
+//		this.allCities = fullCityList;
+//		
+//		for (int i = 0; i < allCities.size(); i ++) {
+//			if(i < regionSize[0]) {
+//				this.north.add(allCities.get(i));
+//			}
+//			else if (i >= regionSize[0] && i < regionSize[1]){
+//				this.south.add(allCities.get(i));
+//			}
+//			else if (i >= regionSize[1] && i < regionSize[2]){
+//				this.east.add(allCities.get(i));
+//			}
+//			else if (i >= regionSize[2] && i < regionSize[3]){
+//				this.west.add(allCities.get(i));
+//			}
+//			else if (i >= regionSize[3] && i < regionSize[4]){
+//				this.central.add(allCities.get(i));
+//			}
+//			else {
+//				this.northeast.add(allCities.get(i));
+//			}
+//		}
+//		
 		
 //		this.north =  fullCityList.subList(0, regionSize[0]);
 //		this.south =  fullCityList.subList(regionSize[0], regionSize[1]);
@@ -55,12 +70,7 @@ public class SortCity {
 //		this.central = (ArrayList<City>) fullCityList.subList(regionSize[3], regionSize[4]);
 //		this.northeast = (ArrayList<City>) fullCityList.subList(regionSize[4], regionSize[5]);
 		
-//		this.allCities.addAll(northCities);
-//		this.allCities.addAll(southCities);
-//		this.allCities.addAll(eastCities);
-//		this.allCities.addAll(westCities);
-//		this.allCities.addAll(centralCities);
-//		this.allCities.addAll(northeastCities);
+		
 
 		
 	}
@@ -141,7 +151,9 @@ public class SortCity {
 		return this.northeast;
 	}
 	
-	
+	public ArrayList<City> getFullList(){
+		return this.allCities;
+	}
 	
 	
 	

@@ -10,8 +10,13 @@ import java.util.HashMap;
  *
  */
 public class MapListener2 implements ActionListener {
+	private ArrayList<City> north = new ArrayList<City>();
+	private ArrayList<City> south = new ArrayList<City>();
+	private ArrayList<City> east = new ArrayList<City>();
+	private ArrayList<City> west = new ArrayList<City>();
+	private ArrayList<City> central = new ArrayList<City>();
+	private ArrayList<City> northeast = new ArrayList<City>();
 	private ArrayList<City> allCities = new ArrayList<City>();
-	private int[] regionSize = new int[6];
 	
 //	private HashMap<City,String> allCities = new HashMap<City,String>();
 	
@@ -21,9 +26,14 @@ public class MapListener2 implements ActionListener {
 	 * 
 	 * @param cities the region's cities
 	 */
-	public MapListener2(ArrayList<City> cities, int[] sizes) {
-		this.allCities = cities;
-		this.regionSize = sizes;
+	public MapListener2(ArrayList<City> nCities, ArrayList<City> sCities, ArrayList<City> eCities, ArrayList<City> wCities, ArrayList<City> cCities, ArrayList<City> neCities) {
+		this.north = nCities;
+		this.south = sCities;
+		this.east = eCities;
+		this.west = wCities;
+		this.central = cCities;
+		this.northeast = neCities;
+
 	} 
 	
 	// MapListener
@@ -33,7 +43,7 @@ public class MapListener2 implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SortCityViewer allCitiesPage = new SortCityViewer(this.allCities, regionSize);
+		SortCityViewer allCitiesPage = new SortCityViewer(north, south, east, west, central, northeast);
 	} // actionPerformed
 
 } // end MapListener
