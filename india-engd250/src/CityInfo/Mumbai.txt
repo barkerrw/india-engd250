@@ -1,11 +1,15 @@
 Mumbai
 
-population
-language
+Population: 3.1 millon
+Primary Language: Marathi
 
 Places of Interest
- 
-stuff
+
+Colaba Causeway
+Also known as Shahid Bhagat Singh Road, it is a busy street famous for its wide variety of vendors and pubs.
+
+Bandra-Worli Sea Link
+Bandra is officially known as Rajiv Ghanid Sea Link. This landmark is an eight-lane cable bridge that connects Bandra and Worli. Construction began in 2000 and ended nine years later in June.
 
 Food
-stuff
+One of the most common dishes in Mumbai is vada pav. Vada pav, or wada pao, consists of a deep-fried potato dumbling, or vada, in between two buns called pav. Generally, it is paired with green chutney.
