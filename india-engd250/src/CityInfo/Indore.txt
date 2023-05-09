@@ -1,11 +1,15 @@
 Indore
 
-population
-language
+Population: 3.3 million
+Primary Language: Marathi
 
 Places of Interest
 
-stuff
+Jaanapv Kuti
+This mountain's peak is at an altitude of 881m from sea level and is popular among nature lovers. Moreover, the mountain is home to an annual festival, Kartik Purnima, which falls on the first full moon after Diwali.
+
+Raalamandal Wildlife Sanctuary
+One of the oldest wildlife sanctuaries in the world, Raalamandal attracts animal enthusiasts from all over. The sanctuary is home to tigers, deer, wild hare, and a large assortment of birds.
 
 Food
-stuff
+Indori Khopra Patties are crispy potato filled patties filled with spicy, tangy, and sweet coconut, herbs, and dried fruits stuffing.

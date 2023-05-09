@@ -1,11 +1,15 @@
 Kolkata
 
-population
-language
+Population: 14.8 million
+Language: Bengali
 
 Places of Interest
 
-stuff
+Victoria Memorial Hall
+During the British's rule over India, this monument was built to honor the late Queen Victoria, Empress of India. It is the largest monument dedicated to a monarch anywhere in the world and is now a museum.
+
+Dakshineswar Kali Temple
+Built in 1855 by Rani Rashmoni, this temple features brilliant architecture and deep meaning for people of the Hindi religion. The presiding deity of the temple is Bhavatarini, a form of Kali.
 
 Food
-stuff
+Machher Jhol is one of Kolkata's most famous foods. This traditional spicy fish curry is generally served as a stew or gravy over rice.
