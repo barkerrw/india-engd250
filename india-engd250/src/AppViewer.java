@@ -99,22 +99,22 @@ public class AppViewer {
 		// add new City with name and image (from source)
 		northCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
 		westCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
-		southCities.add(new City("Bengaluru", "src/pictures/LalbaghGlasshouse.jpg"));
+		southCities.add(new City("Bengaluru", "src/pictures/BangalorePalace.jpg"));
 		eastCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
 		centralCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
-		northeastCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
+		northeastCities.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
 		
 		northCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
-		westCities.add(new City("Bengaluru", "src/pictures/LalbaghGlasshouse.jpg"));
+		westCities.add(new City("Bengaluru", "src/pictures/BangalorePalace.jpg"));
 		southCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
 		eastCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
-		centralCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
+		centralCities.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
 		northeastCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
 		
-		northCities.add(new City("Bengaluru", "src/pictures/LalbaghGlasshouse.jpg"));
+		northCities.add(new City("Bengaluru", "src/pictures/BangalorePalace.jpg"));
 		westCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
 		southCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
-		eastCities.add(new City("Guahati", "src/pictures/KamakhyaTemple.jpeg"));
+		eastCities.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
 		centralCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
 		northeastCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
 		
