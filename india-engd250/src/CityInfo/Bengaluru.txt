@@ -1,7 +1,7 @@
 Bengaluru/Bangalore
 
-population: 96,22,000
-language: Kannada
+Population: 96,22,000
+Primary Language: Kannada
 
 Places of Interest
 

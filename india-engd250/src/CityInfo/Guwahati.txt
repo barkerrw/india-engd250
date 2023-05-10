@@ -1,7 +1,7 @@
 Guwahati
 
-population: 11,76,000
-language: Assamese
+Population: 11,76,000
+Primary Language: Assamese
 
 Places of Interest
 
