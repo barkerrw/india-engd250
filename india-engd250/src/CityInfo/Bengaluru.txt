@@ -1,11 +1,15 @@
 Bengaluru/Bangalore
 
-population
-language
+population: 96,22,000
+language: Kannada
 
 Places of Interest
 
-stuff
+Bannerghatta Biological Park
+Within the Bannerghatta National Park is a section holding a Zoo, Safari, Butterfly Park, and Animal Conservation and Rescue Center. Visitors can go on Lion and Tiger safaris seeing these big cats in their natural habitat or wander through a 7.5 acre butterfly garden seeing around 48 species of butterflies. 
+
+Bengaluru Palace
+This gigantic palace sits on 454 acres and is modelled on the Windsor Castle in England. Within the 45000 sq ft building is a variety of elegant interiors, paintings, carvings, and a swimming pool. There is a large courtyard often used for concerts and cultural programs as well as an amusement park inside the palace complex. 
 
 Food
-stuff
+Thatte idli is a popular variant of idli. Thatte idli is fermented overnight before cooking in a larger bowl allowing it to rise up thicker than regular idli. Thatte idli is typically served with coconut chutney and sambar and pairs well with filtered coffee. Another popular regional dish is puliyogare. Puliyogare is a mix of rice, fried lentils, chillies, spices, tamarind extract and jaggery.
