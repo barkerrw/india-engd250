@@ -18,7 +18,6 @@ public class AllCitiesListener implements ActionListener {
 	private ArrayList<City> west = new ArrayList<City>();
 	private ArrayList<City> central = new ArrayList<City>();
 	private ArrayList<City> northeast = new ArrayList<City>();
-	private ArrayList<City> allCities = new ArrayList<City>();
 
 	/**
 	 * ensures: a new AllCitiesListener can be created
