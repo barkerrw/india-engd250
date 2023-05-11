@@ -76,20 +76,4 @@ public class UnitTesting {
 		return testList;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-//	@Test
-//	public void testReadCityFile() {
-//		String[] 
-//		fail("Not yet implemented");
-//	}
-
 }
