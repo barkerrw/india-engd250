@@ -3,6 +3,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
+ * Class: MapListener
  * 
  * @author barkerrw & altschmn <br>
  *         Purpose: Used to track button inputs from user

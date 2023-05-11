@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
+/**
+ * Class: SortCity
+ * 
+ * @author barkerrw & altschmn <br>
+ *         Purpose: Used to sort cities alphabetically and by region
+ *
+ */
 public class SortCity {
-
-//	private static HashMap<City,String> allCitiesMap;
-//	
-//	public SortCity(HashMap<City,String> cities) {
-//		this.allCitiesMap = cities;
-//	}
-//	
-
+	// set instance variables
 	private ArrayList<City> north = new ArrayList<City>();
 	private ArrayList<City> south = new ArrayList<City>();
 	private ArrayList<City> east = new ArrayList<City>();
@@ -21,6 +21,16 @@ public class SortCity {
 	private ArrayList<City> northeast = new ArrayList<City>();
 	private ArrayList<City> allCities = new ArrayList<City>();
 
+	/**
+	 * ensures: Cities are placed in new array lists
+	 * 
+	 * @param nCities  contains north cities
+	 * @param sCities  contains south cities
+	 * @param eCities  contains east cities
+	 * @param wCities  contains west cities
+	 * @param cCities  contains central cities
+	 * @param neCities contains northeast cities
+	 */
 	public SortCity(ArrayList<City> nCities, ArrayList<City> sCities, ArrayList<City> eCities, ArrayList<City> wCities,
 			ArrayList<City> cCities, ArrayList<City> neCities) {
 
@@ -37,110 +47,96 @@ public class SortCity {
 		this.allCities.addAll(west);
 		this.allCities.addAll(central);
 		this.allCities.addAll(northeast);
+	} // end SortCity
 
-//		this.allCities = fullCityList;
-//		
-//		for (int i = 0; i < allCities.size(); i ++) {
-//			if(i < regionSize[0]) {
-//				this.north.add(allCities.get(i));
-//			}
-//			else if (i >= regionSize[0] && i < regionSize[1]){
-//				this.south.add(allCities.get(i));
-//			}
-//			else if (i >= regionSize[1] && i < regionSize[2]){
-//				this.east.add(allCities.get(i));
-//			}
-//			else if (i >= regionSize[2] && i < regionSize[3]){
-//				this.west.add(allCities.get(i));
-//			}
-//			else if (i >= regionSize[3] && i < regionSize[4]){
-//				this.central.add(allCities.get(i));
-//			}
-//			else {
-//				this.northeast.add(allCities.get(i));
-//			}
-//		}
-//		
-
-//		this.north =  fullCityList.subList(0, regionSize[0]);
-//		this.south =  fullCityList.subList(regionSize[0], regionSize[1]);
-//		this.east = fullCityList.subList(regionSize[1], regionSize[2]);
-//		this.west = (ArrayList<City>) fullCityList.subList(regionSize[2], regionSize[3]);
-//		this.central = (ArrayList<City>) fullCityList.subList(regionSize[3], regionSize[4]);
-//		this.northeast = (ArrayList<City>) fullCityList.subList(regionSize[4], regionSize[5]);
-
-	}
-
-	class alphabetical implements Comparator<City> {
+	/**
+	 * Class: Alphabetize
+	 * 
+	 * @author barkerrw & altschmn <br>
+	 *         Purpose: Used to alphabetize cities with a comparator
+	 *
+	 */
+	class Alphabetize implements Comparator<City> {
 
 		@Override
 		public int compare(City o1, City o2) {
-			// TODO Auto-generated method stub
 			return o1.getName().compareTo(o2.getName());
-		}
+		} // compare
+	} // Alphabetize
 
-	}
-
-//	public ArrayList<City> sortEachRegion(HashMap<City,String> cities, String targetRegion) {
-//		ArrayList<City> sortedRegion = new ArrayList<City>();
-//		
-//		for(Entry<City, String> place: cities.entrySet()) {
-//			if(place.getValue().equals(targetRegion)) {
-//				sortedRegion.add(place.getKey());
-//			}
-//		}
-//		
-//		sortedRegion.sort(new alphabetical());
-//		
-//		return sortedRegion;
-//	}
-//	
-//	
-	public ArrayList<City> sortAll(HashMap<City, String> cities) {
-		ArrayList<City> sortedCities = new ArrayList<City>();
-
-		for (Entry<City, String> place : cities.entrySet()) {
-			sortedCities.add(place.getKey());
-		}
-
-		sortedCities.sort(new alphabetical());
-
-		return sortedCities;
-	}
-
+	/**
+	 * ensures: Used to make the list of sorted cities
+	 * 
+	 * @param cities is an array list of cities
+	 * @return the array list of cities in alphabetical order
+	 */
 	public ArrayList<City> sortList(ArrayList<City> cities) {
 		ArrayList<City> sortedCities = cities;
-		sortedCities.sort(new alphabetical());
+		sortedCities.sort(new Alphabetize());
 
 		return sortedCities;
-	}
+	} // sortList
 
+	/**
+	 * ensures: getter for northern cities
+	 * 
+	 * @return array list of northern cities
+	 */
 	public ArrayList<City> getNorth() {
 		return this.north;
 	}
 
+	/**
+	 * ensures: getter for southern cities
+	 * 
+	 * @return array list of southern cities
+	 */
 	public ArrayList<City> getSouth() {
 		return this.south;
-	}
+	} // getSouth
 
+	/**
+	 * ensures: getter for eastern cities
+	 * 
+	 * @return array list of eastern cities
+	 */
 	public ArrayList<City> getEast() {
 		return this.east;
-	}
+	} // getEast
 
+	/**
+	 * ensures: getter for western cities
+	 * 
+	 * @return array list of western cities
+	 */
 	public ArrayList<City> getWest() {
 		return this.west;
-	}
+	} // getWest
 
+	/**
+	 * ensures: getter for central cities
+	 * 
+	 * @return array list of central cities
+	 */
 	public ArrayList<City> getCentral() {
 		return this.central;
-	}
+	} // getCentral
 
+	/**
+	 * ensures: getter for northeastern cities
+	 * 
+	 * @return array list of northeastern cities
+	 */
 	public ArrayList<City> getNortheast() {
 		return this.northeast;
-	}
+	} // getNortheast
 
+	/**
+	 * ensures: getter for full list of cities
+	 * 
+	 * @return array list of all cities
+	 */
 	public ArrayList<City> getFullList() {
 		return this.allCities;
-	}
-
-}
+	} // getFullList
+} // end SortCity

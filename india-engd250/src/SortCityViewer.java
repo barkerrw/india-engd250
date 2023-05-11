@@ -14,22 +14,21 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 /**
+ * Class: SortCityViewer
  * 
  * @author barkerrw & altschmn <br>
+ * 		   Purpose: Used to display cities in All Cities Page
  *
  */
 public class SortCityViewer extends SortCity {
 	// set instance variables of screen size
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
-	private static final int BUTTON_WIDTH = 140;
-	private static final int BUTTON_HEIGHT = 100;
 	private static final int MAX_SPACE = 100;
 	private static final int COLUMNS = 6;
 
 	private int maxSize;
 
-	private HashMap<City, String> citiesMap = new HashMap<City, String>();
 	private ArrayList<City> allCitiesList = new ArrayList<City>();
 	private ArrayList<City> northCities = new ArrayList<City>();
 	private ArrayList<City> westCities = new ArrayList<City>();
@@ -44,13 +43,6 @@ public class SortCityViewer extends SortCity {
 		super(nCities, sCities, eCities, wCities, cCities, neCities);
 
 		this.allCitiesList = super.getFullList();
-//		this.northCities = super.getNorth();
-//		this.southCities = super.getSouth();
-//		this.eastCities = super.getEast();
-//		this.westCities = super.getWest();
-//		this.centralCities = super.getCentral();
-//		this.northeastCities = super.getNortheast();
-
 		this.northCities = super.sortList(nCities);
 		this.southCities = super.sortList(sCities);
 		this.eastCities = super.sortList(eCities);
@@ -59,14 +51,6 @@ public class SortCityViewer extends SortCity {
 		this.northeastCities = super.sortList(neCities);
 		this.allCitiesList = super.sortList(allCitiesList);
 
-//		
-
-//		int size = sizes[0];
-//		for(int i = 1; i < 6; i ++) {
-//			if (sizes[i] > size) {
-//				size = sizes[i];
-//			}
-//		}
 		this.maxSize = 3;
 
 		System.out.println("All Cities:  ");
@@ -141,12 +125,8 @@ public class SortCityViewer extends SortCity {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				cityFrame.remove(cityPanel);
-
 				cityPanel.removeAll();
 				cityPanel.add(regionGroup());
-
-//				cityFrame.add(cityPanel);
 				cityFrame.revalidate();
 				cityFrame.repaint();
 			}
@@ -159,19 +139,12 @@ public class SortCityViewer extends SortCity {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				cityFrame.removeAll();
-//				cityFrame.add(alphabetizedList());
-
 				cityPanel.removeAll();
 				cityPanel.add(alphabetizedList());
 				cityFrame.revalidate();
 				cityFrame.repaint();
 			}
 		});
-
-//		cityFrame.add(regionGroup());
-//		cityFrame.add(alphabetizedList());
-
 		cityFrame.revalidate();
 		cityFrame.repaint();
 
@@ -184,13 +157,12 @@ public class SortCityViewer extends SortCity {
 		JPanel alphabetPanel = new JPanel();
 		int gap = MAX_SPACE / (2 * this.allCitiesList.size() / COLUMNS);
 
-//		alphabetPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
 		alphabetPanel.setLayout(new GridLayout(0, COLUMNS / 2, gap, 10));
 		alphabetPanel.setBackground(Color.WHITE);
 
 		for (int i = 0; i < allCitiesList.size(); i++) {
 			JButton cityButton = new JButton(allCitiesList.get(i).getName(), allCitiesList.get(i).getSmallImage());
-//			cityButton.setFont(new Font (allCitiesList.get(i).getName(), Font.BOLD, 20));
+
 			cityButton.setHorizontalTextPosition(SwingConstants.RIGHT);
 			cityButton.setVerticalTextPosition(SwingConstants.CENTER);
 			cityButton.setBackground(new Color(245, 245, 245));
@@ -198,7 +170,6 @@ public class SortCityViewer extends SortCity {
 			try {
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -212,7 +183,6 @@ public class SortCityViewer extends SortCity {
 	public JPanel regionGroup() {
 		JPanel regionPanel = new JPanel();
 
-//		regionPanel.setBounds(MAX_SPACE/4 ,MAX_SPACE/2, WIDTH - MAX_SPACE/2, HEIGHT - MAX_SPACE);
 		regionPanel.setLayout(new GridLayout(COLUMNS, maxSize + 1, 10, 10));
 		regionPanel.setBackground(Color.WHITE);
 
@@ -237,18 +207,11 @@ public class SortCityViewer extends SortCity {
 			try {
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
 			regionPanel.add(cityButton);
 		}
-//		if (this.northCities.size() < maxSize){
-//			int needBlanks = maxSize - this.northCities.size();
-//			for (int i = 0; i < needBlanks; i ++) {
-//				regionPanel.add(blank);
-//			}
-//		}
 
 		southLabel.setFont(new Font(southLabel.getText(), Font.BOLD, 20));
 		regionPanel.add(southLabel);
@@ -261,7 +224,6 @@ public class SortCityViewer extends SortCity {
 			try {
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -279,7 +241,6 @@ public class SortCityViewer extends SortCity {
 			try {
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -297,7 +258,6 @@ public class SortCityViewer extends SortCity {
 			try {
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -315,7 +275,6 @@ public class SortCityViewer extends SortCity {
 			try {
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -333,13 +292,10 @@ public class SortCityViewer extends SortCity {
 			try {
 				cityButton.addActionListener(new RegionListener(cityButton.getText()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 			regionPanel.add(cityButton);
 		}
-
 		return regionPanel;
 	}
 

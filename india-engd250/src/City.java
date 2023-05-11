@@ -3,6 +3,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
+ * Class: City
  * 
  * @author barkerrw & altschmn <br>
  *         Purpose: New class to implement cities

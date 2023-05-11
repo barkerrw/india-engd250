@@ -1,7 +1,7 @@
 /**
  * Class: MainApp
  * 
- * @author barkerrw <br>
+ * @author barkerrw & altschmn <br>
  *         Purpose: Used to run the app. Only "Run As" this class to make
  *         application work correctly
  *

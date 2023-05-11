@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.text.*;
 
 /**
+ * Class: CityViewer
  * 
  * @author barkerrw & altschmn <br>
  *         Purpose: Used to display city screen with imported text file

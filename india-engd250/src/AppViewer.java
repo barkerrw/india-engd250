@@ -100,19 +100,12 @@ public class AppViewer {
 		centralCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
 		northeastCities.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
 
-		northCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
-		westCities.add(new City("Bengaluru", "src/pictures/BangalorePalace.jpg"));
-		southCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
-		eastCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
-		centralCities.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
-		northeastCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-
-		northCities.add(new City("Bengaluru", "src/pictures/BangalorePalace.jpg"));
-		westCities.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
-		southCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
-		eastCities.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
-		centralCities.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-		northeastCities.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
+//		northCities.add(new City("Delhi", "src/pictures/MumbaiHarbor.jpg"));
+//		westCities.add(new City("Ahmedabad", "src/pictures/BangalorePalace.jpg"));
+//		southCities.add(new City("Hyderabad", "src/pictures/Kolkata.jpg"));
+//		eastCities.add(new City("Patna", "src/pictures/IndoreRajwada.jpg"));
+//		centralCities.add(new City("Nagpur", "src/pictures/KamakhyaTemple.jpeg"));
+//		northeastCities.add(new City("Agartala", "src/pictures/AgraFort.jpg"));
 
 		// create a mega HashMap of all the cities
 		for (int i = 0; i < northCities.size(); i++) {
@@ -157,7 +150,7 @@ public class AppViewer {
 		northeast.addActionListener(new MapListener(northeastCities));
 
 		allCities.addActionListener(
-				new MapListener2(northCities, southCities, eastCities, westCities, centralCities, northeastCities));
+				new AllCitiesListener(northCities, southCities, eastCities, westCities, centralCities, northeastCities));
 
 		// set close operation for frame
 		frame.setLocationRelativeTo(null);

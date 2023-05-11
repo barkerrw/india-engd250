@@ -15,6 +15,7 @@ import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
 
 /**
+ * Class: CityPageLayout
  * 
  * @author barkerrw & altschmn <br>
  *         Purpose: Class for formatting text file output

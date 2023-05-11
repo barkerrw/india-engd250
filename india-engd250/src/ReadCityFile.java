@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * Class: ReadCityFile
  * 
  * @author barkerrw & altschmn <br>
  *         Purpose: to take information from text files

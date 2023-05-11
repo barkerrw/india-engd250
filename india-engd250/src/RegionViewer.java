@@ -13,6 +13,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 /**
+ * Class: RegionViewer
  * 
  * @author barkerrw & altschmn <br>
  *         Purpose: Used to display region screen with images and buttons
