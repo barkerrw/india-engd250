@@ -42,14 +42,6 @@ public class UnitTesting {
 		east.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
 		central.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
 		northeast.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-
-		north.add(new City("Bengaluru", "src/pictures/BangalorePalace.jpg"));
-		west.add(new City("Kolkata", "src/pictures/Kolkata.jpg"));
-		south.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
-		east.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
-		central.add(new City("Agra", "src/pictures/AgraFort.jpg"));
-		northeast.add(new City("Mumbai", "src/pictures/MumbaiHarbor.jpg"));
-
 	}
 		
 		
