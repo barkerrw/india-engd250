@@ -28,7 +28,6 @@ public class AppViewer {
 	private ArrayList<City> centralCities = new ArrayList<City>();
 	private ArrayList<City> northeastCities = new ArrayList<City>();
 
-	private HashMap<City, String> allCitiesMap = new HashMap<City, String>();
 	private ArrayList<City> allCitiesList = new ArrayList<City>();
 	private int[] regionListSize = new int[6];
 
@@ -106,26 +105,6 @@ public class AppViewer {
 		eastCities.add(new City("Patna", "src/pictures/PatnaGandhiMuseum.jpeg"));
 		centralCities.add(new City("Nagpur", "src/pictures/NagpurZeroMarker.jpg"));
 		northeastCities.add(new City("Agartala", "src/pictures/AgartalaRavindraKanan.jpg"));
-
-		// create a mega HashMap of all the cities
-		for (int i = 0; i < northCities.size(); i++) {
-			this.allCitiesMap.put(northCities.get(i), "north");
-		}
-		for (int i = 0; i < southCities.size(); i++) {
-			this.allCitiesMap.put(southCities.get(i), "south");
-		}
-		for (int i = 0; i < eastCities.size(); i++) {
-			this.allCitiesMap.put(eastCities.get(i), "east");
-		}
-		for (int i = 0; i < westCities.size(); i++) {
-			this.allCitiesMap.put(westCities.get(i), "west");
-		}
-		for (int i = 0; i < centralCities.size(); i++) {
-			this.allCitiesMap.put(centralCities.get(i), "central");
-		}
-		for (int i = 0; i < northeastCities.size(); i++) {
-			this.allCitiesMap.put(northeastCities.get(i), "northeast");
-		}
 
 		// make a mega arraylist
 		this.allCitiesList.addAll(northCities);
