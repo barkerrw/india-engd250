@@ -2,12 +2,12 @@
  * Class: MainApp
  * 
  * @author barkerrw <br>
- * 			Purpose: Used to run the app. Only "Run As" this class
- * 						to make application work correctly
+ *         Purpose: Used to run the app. Only "Run As" this class to make
+ *         application work correctly
  *
  */
 public class MainApp {
-	
+
 	/**
 	 * ensures: the app is run
 	 * 

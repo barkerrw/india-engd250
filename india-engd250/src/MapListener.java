@@ -5,12 +5,12 @@ import java.util.ArrayList;
 /**
  * 
  * @author barkerrw & altschmn <br>
- * 		   Purpose: Used to track button inputs from user
+ *         Purpose: Used to track button inputs from user
  *
  */
 public class MapListener implements ActionListener {
 	private ArrayList<City> cities = new ArrayList<City>();
-	
+
 	/**
 	 * ensures: new MapListener is created
 	 * 
@@ -19,7 +19,7 @@ public class MapListener implements ActionListener {
 	public MapListener(ArrayList<City> cities) {
 		this.cities = cities;
 	} // MapListener
-	
+
 	/**
 	 * ensures: the user input makes a new Page
 	 */

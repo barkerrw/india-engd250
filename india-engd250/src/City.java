@@ -41,12 +41,13 @@ public class City {
 	 * @return cityImage
 	 */
 	public ImageIcon getImage() {
-		return new ImageIcon(new ImageIcon(cityImage).getImage().getScaledInstance(PIC_SIZE, PIC_SIZE, Image.SCALE_DEFAULT));
+		return new ImageIcon(
+				new ImageIcon(cityImage).getImage().getScaledInstance(PIC_SIZE, PIC_SIZE, Image.SCALE_DEFAULT));
 	} // getImage
-	
-	
+
 	public ImageIcon getSmallImage() {
-		return new ImageIcon(new ImageIcon(cityImage).getImage().getScaledInstance(SMALL_SIZE, SMALL_SIZE, Image.SCALE_DEFAULT));
+		return new ImageIcon(
+				new ImageIcon(cityImage).getImage().getScaledInstance(SMALL_SIZE, SMALL_SIZE, Image.SCALE_DEFAULT));
 	} // getImage
-	
+
 } // end City

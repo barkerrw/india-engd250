@@ -23,7 +23,7 @@ public class CityViewer extends CityPageLayout {
 	/**
 	 * ensures: anew CityViewer can be created
 	 * 
-	 * @param name is the city name 
+	 * @param name is the city name
 	 * @param info is an arraylist of information from text file
 	 */
 	public CityViewer(String name, ArrayList<String> info) {
@@ -46,7 +46,7 @@ public class CityViewer extends CityPageLayout {
 			if (cityInfo.get(i).equals("Places of Interest") || cityInfo.get(i).equals("Food")) {
 				this.addHeadingInfo(document, cityInfo.get(i));
 			} // if
-			
+
 			// adds images (not implemented)
 //	    	else if (cityInfo.get(i).charAt(0) == '*'){
 //	    		System.out.println(cityInfo.get(i));
@@ -80,9 +80,9 @@ public class CityViewer extends CityPageLayout {
 		cityFrame.add(scrollPane, BorderLayout.CENTER);
 //		cityFrame.add(cityPanel);
 		cityFrame.repaint();
-		
+
 		cityFrame.setLocationRelativeTo(null);
 		cityFrame.setVisible(true);
 		cityFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	} //CityViewer
+	} // CityViewer
 } // end CityViewer

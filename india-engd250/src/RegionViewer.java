@@ -52,8 +52,8 @@ public class RegionViewer {
 		cityFrame.add(label, BorderLayout.NORTH);
 		// make panel
 		JPanel cityPanel = new JPanel();
-		int gap = MAX_SPACE / ( this.cities.size());
-		cityPanel.setBounds(MAX_SPACE, 2* gap, WIDTH - (2 * MAX_SPACE), HEIGHT - (4 * gap));
+		int gap = MAX_SPACE / (this.cities.size());
+		cityPanel.setBounds(MAX_SPACE, 2 * gap, WIDTH - (2 * MAX_SPACE), HEIGHT - (4 * gap));
 		cityPanel.setLayout(new GridLayout(0, COLUMNS, gap, gap));
 		cityPanel.setBackground(Color.WHITE);
 		// add city buttons and images to panel
