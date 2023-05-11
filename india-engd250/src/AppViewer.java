@@ -99,12 +99,12 @@ public class AppViewer {
 		centralCities.add(new City("Indore", "src/pictures/IndoreRajwada.jpg"));
 		northeastCities.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
 
-//		northCities.add(new City("Delhi", "src/pictures/MumbaiHarbor.jpg"));
-//		westCities.add(new City("Ahmedabad", "src/pictures/BangalorePalace.jpg"));
-//		southCities.add(new City("Hyderabad", "src/pictures/Kolkata.jpg"));
-//		eastCities.add(new City("Patna", "src/pictures/IndoreRajwada.jpg"));
-//		centralCities.add(new City("Nagpur", "src/pictures/KamakhyaTemple.jpeg"));
-//		northeastCities.add(new City("Agartala", "src/pictures/AgraFort.jpg"));
+		northCities.add(new City("Delhi", "src/pictures/NewDelhi.jpg"));
+		westCities.add(new City("Ahmedabad", "/src/pictures/BasirMosqueAhmedabad.jpg"));
+		southCities.add(new City("Hyderabad", "/src/pictures/HyderabadCharminar.jpg"));
+		eastCities.add(new City("Patna", "/src/pictures/PatnaGandhiMuseum.jpeg"));
+		centralCities.add(new City("Nagpur", "/src/pictures/NagpurZeroMarker.jpg"));
+		northeastCities.add(new City("Agartala", "src/pictures/AgartalaRavindraKanan.jpg"));
 
 		// make a mega arraylist
 		this.allCitiesList.addAll(northCities);
