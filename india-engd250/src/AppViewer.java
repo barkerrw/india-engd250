@@ -101,10 +101,10 @@ public class AppViewer {
 		northeastCities.add(new City("Guwahati", "src/pictures/KamakhyaTemple.jpeg"));
 
 		northCities.add(new City("Delhi", "src/pictures/NewDelhi.jpg"));
-		westCities.add(new City("Ahmedabad", "/src/pictures/BasirMosqueAhmedabad.jpg"));
-		southCities.add(new City("Hyderabad", "/src/pictures/HyderabadCharminar.jpg"));
-		eastCities.add(new City("Patna", "/src/pictures/PatnaGandhiMuseum.jpeg"));
-		centralCities.add(new City("Nagpur", "/src/pictures/NagpurZeroMarker.jpg"));
+		westCities.add(new City("Ahmedabad", "src/pictures/BasirMosqueAhmedabad.jpg"));
+		southCities.add(new City("Hyderabad", "src/pictures/HyderabadCharminar.jpg"));
+		eastCities.add(new City("Patna", "src/pictures/PatnaGandhiMuseum.jpeg"));
+		centralCities.add(new City("Nagpur", "src/pictures/NagpurZeroMarker.jpg"));
 		northeastCities.add(new City("Agartala", "src/pictures/AgartalaRavindraKanan.jpg"));
 
 		// create a mega HashMap of all the cities

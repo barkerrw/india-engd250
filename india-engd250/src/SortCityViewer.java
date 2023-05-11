@@ -25,7 +25,7 @@ public class SortCityViewer extends SortCity {
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
 	private static final int MAX_SPACE = 100;
-	private static final int COLUMNS = 6;
+	private static final int ROWS = 6;
 
 	private int maxSize;
 
@@ -155,9 +155,9 @@ public class SortCityViewer extends SortCity {
 
 	public JPanel alphabetizedList() {
 		JPanel alphabetPanel = new JPanel();
-		int gap = MAX_SPACE / (2 * this.allCitiesList.size() / COLUMNS);
+		int gap = MAX_SPACE / (2 * this.allCitiesList.size() / ROWS);
 
-		alphabetPanel.setLayout(new GridLayout(0, COLUMNS / 2, gap, 10));
+		alphabetPanel.setLayout(new GridLayout(0, ROWS / 2, gap, 10));
 		alphabetPanel.setBackground(Color.WHITE);
 
 		for (int i = 0; i < allCitiesList.size(); i++) {
@@ -183,7 +183,7 @@ public class SortCityViewer extends SortCity {
 	public JPanel regionGroup() {
 		JPanel regionPanel = new JPanel();
 
-		regionPanel.setLayout(new GridLayout(COLUMNS, maxSize + 1, 10, 10));
+		regionPanel.setLayout(new GridLayout(ROWS, maxSize + 1, 10, 10));
 		regionPanel.setBackground(Color.WHITE);
 
 		JLabel northLabel = new JLabel("North");
