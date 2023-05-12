@@ -46,11 +46,6 @@ public class CityViewer extends CityPageLayout {
 				this.addHeadingInfo(document, cityInfo.get(i));
 			} // if
 
-			// adds images (not implemented)
-//	    	else if (cityInfo.get(i).charAt(0) == '*'){
-//	    		System.out.println(cityInfo.get(i));
-////	    		this.addPicInfo(document, cityInfo.get(i));
-//	    	}
 			else {
 				this.addPlainInfo(document, cityInfo.get(i));
 			} // else
@@ -72,8 +67,6 @@ public class CityViewer extends CityPageLayout {
 		JTextPane textPane = new JTextPane(document);
 		textPane.setEditable(false);
 		JScrollPane scrollPane = new JScrollPane(textPane); // not used
-//	    content.add(scrollPane, BorderLayout.CENTER);
-//		cityPanel.add(scrollPane, BorderLayout.CENTER);
 
 		// add panes to frame
 		cityFrame.add(scrollPane, BorderLayout.CENTER);

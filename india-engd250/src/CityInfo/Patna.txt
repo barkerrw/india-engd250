@@ -1,11 +1,15 @@
 Patna
 
-Population:
-Language:
+Population: 58,38,465
+Primary Language: Hindi
 
 Places of Interest
 
-stuff
+Patna Planetarium
+Located in Patna's Indira Gandhi Science complex, it is one of the largest planetariums in Asia. Patna Planetarium, or Taramandal, is modeled after the planet Saturn.
+
+Gandhi Smarak Sangrahalaya
+Also known as the Gandhi Memorial Institution, this museum showcases the life and principles of Mahatma Gandhi. 
 
 Food
-stuff
+Malpua is a crisp and fluffy sweetened breakfast dish famous in Patna. Generally, this meal is served with tea as a meal, snack, or dessert depending on the time of day.

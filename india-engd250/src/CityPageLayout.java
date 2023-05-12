@@ -30,7 +30,7 @@ public abstract class CityPageLayout {
 	 * ensures: new CityPageLayout can be made
 	 * 
 	 * @param name is the name of the City
-	 * @param info is an arraylist of information from text file
+	 * @param info is an array list of information from text file
 	 */
 	public CityPageLayout(String name, ArrayList<String> info) {
 		this.cityName = name;
