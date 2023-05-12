@@ -1,17 +1,12 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+
 
 /**
  * Class: SortCityViewer
@@ -62,49 +57,7 @@ public class SortCityViewer extends SortCity {
 		this.allCitiesList = super.sortList(allCitiesList);
 
 		this.maxSize = 3;
-
-		// unit test to ensures cities are sorted alphabetically
-		System.out.println("All Cities:  ");
-		for (City entry : allCitiesList) {
-			System.out.println(entry.getName());
-		} // for
-
-		System.out.println("\n\n By Region:  ");
-		for (City entry : northCities) {
-			System.out.println(entry.getName());
-		} // for
-		System.out.println();
-
-		for (City entry : southCities) {
-			System.out.println(entry.getName());
-		} // for
-		System.out.println();
-		System.out.println();
-
-		for (City entry : this.eastCities) {
-			System.out.println(entry.getName());
-		} // for
-		System.out.println();
-		System.out.println();
-
-		for (City entry : westCities) {
-			System.out.println(entry.getName());
-		} // for
-		System.out.println();
-		System.out.println();
-
-		for (City entry : centralCities) {
-			System.out.println(entry.getName());
-		} // for
-		System.out.println();
-		System.out.println();
-
-		for (City entry : northeastCities) {
-			System.out.println(entry.getName());
-		} // for
-		System.out.println();
-		System.out.println();
-
+		
 		// make frame for new screen
 		JFrame cityFrame = new JFrame("All Cities Screen");
 		cityFrame.setSize(WIDTH, HEIGHT);
@@ -221,7 +174,6 @@ public class SortCityViewer extends SortCity {
 		JLabel westLabel = new JLabel("West");
 		JLabel centralLabel = new JLabel("Central");
 		JLabel northeastLabel = new JLabel("Northeast");
-		JLabel blank = new JLabel();
 
 		// add north buttons with style
 		northLabel.setFont(new Font(northLabel.getText(), Font.BOLD, 20));

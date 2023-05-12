@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map.Entry;
 
 /**
  * Class: SortCity
@@ -34,19 +31,19 @@ public class SortCity {
 	public SortCity(ArrayList<City> nCities, ArrayList<City> sCities, ArrayList<City> eCities, ArrayList<City> wCities,
 			ArrayList<City> cCities, ArrayList<City> neCities) {
 
-		this.north = nCities;
-		this.south = sCities;
-		this.east = eCities;
-		this.west = wCities;
-		this.central = cCities;
-		this.northeast = neCities;
+		north = nCities;
+		south = sCities;
+		east = eCities;
+		west = wCities;
+		central = cCities;
+		northeast = neCities;
 
-		this.allCities.addAll(north);
-		this.allCities.addAll(south);
-		this.allCities.addAll(east);
-		this.allCities.addAll(west);
-		this.allCities.addAll(central);
-		this.allCities.addAll(northeast);
+		allCities.addAll(north);
+		allCities.addAll(south);
+		allCities.addAll(east);
+		allCities.addAll(west);
+		allCities.addAll(central);
+		allCities.addAll(northeast);
 	} // end SortCity
 
 	/**
@@ -83,7 +80,7 @@ public class SortCity {
 	 * @return array list of northern cities
 	 */
 	public ArrayList<City> getNorth() {
-		return this.north;
+		return north;
 	}
 
 	/**
@@ -92,7 +89,7 @@ public class SortCity {
 	 * @return array list of southern cities
 	 */
 	public ArrayList<City> getSouth() {
-		return this.south;
+		return south;
 	} // getSouth
 
 	/**
@@ -101,7 +98,7 @@ public class SortCity {
 	 * @return array list of eastern cities
 	 */
 	public ArrayList<City> getEast() {
-		return this.east;
+		return east;
 	} // getEast
 
 	/**
@@ -110,7 +107,7 @@ public class SortCity {
 	 * @return array list of western cities
 	 */
 	public ArrayList<City> getWest() {
-		return this.west;
+		return west;
 	} // getWest
 
 	/**
@@ -119,7 +116,7 @@ public class SortCity {
 	 * @return array list of central cities
 	 */
 	public ArrayList<City> getCentral() {
-		return this.central;
+		return central;
 	} // getCentral
 
 	/**
@@ -128,7 +125,7 @@ public class SortCity {
 	 * @return array list of northeastern cities
 	 */
 	public ArrayList<City> getNortheast() {
-		return this.northeast;
+		return northeast;
 	} // getNortheast
 
 	/**
@@ -137,6 +134,6 @@ public class SortCity {
 	 * @return array list of all cities
 	 */
 	public ArrayList<City> getFullList() {
-		return this.allCities;
+		return allCities;
 	} // getFullList
 } // end SortCity

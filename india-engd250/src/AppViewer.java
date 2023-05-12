@@ -106,7 +106,7 @@ public class AppViewer {
 		centralCities.add(new City("Nagpur", "/src/pictures/NagpurZeroMarker.jpg"));
 		northeastCities.add(new City("Agartala", "src/pictures/AgartalaRavindraKanan.jpg"));
 
-		// make a mega arraylist
+		// make array list for all cities
 		this.allCitiesList.addAll(northCities);
 		this.regionListSize[0] = northCities.size();
 		this.allCitiesList.addAll(southCities);
@@ -130,10 +130,11 @@ public class AppViewer {
 
 		allCities.addActionListener(
 				new AllCitiesListener(northCities, southCities, eastCities, westCities, centralCities, northeastCities));
-
+		
 		// set close operation for frame
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	} // AppViewer
+	
 } // end AppViewer
