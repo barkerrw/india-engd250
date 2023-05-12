@@ -1,11 +1,15 @@
 Delhi
 
-Population:
-Language:
+Population: 3,29,41,000
+Language: Hindi
 
 Places of Interest
 
-stuff
+India Gate
+India Gate is a giant archway located in the heart of Delhi. Built in 1921, this is a memorial is dedicated to the Indian soldiers wo lost their lives fighting for the British during World War1.  Underneath the arch is a black marble plinth with a rifle and war helmet that serves as a gravestone to the Indian martyrs who lost their lives defending the nation.
+
+Lotus Temple
+The Lotus Temple made of 27 white marble petals is surrounded by 9 reflection pools. This is one of the 7 Baha’I houses of worship and is often visited by locals and tourists alike. Nearby are also many beautiful gardens adding to the serenity of the location.
 
 Food
-stuff
+Cholekulche is mouthwatering matar served with kulche, a fluffy type of flatbread, and garnished with butter and coriander. Stuffed parathas are also famous among the locals with fillings of aloo, paneer and more. Kulfi is a traditional Indian icecream of frozen milk and fruits on a stick, sprinkled with nuts on the outside.  
