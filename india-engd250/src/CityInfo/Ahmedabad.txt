@@ -1,11 +1,15 @@
 Ahmedabad
 
-Population:
-Language:
+Population: 86,51,000
+Language: Gujarati
 
 Places of Interest
 
-stuff
+Sabarmati Ashram
+On the banks of the Sabarmati River, Mahatma Gandhi spent some of his most notable years staying in this Ashram. Currently this complex serves as a museum showing Gandhi’s life with pictures, paintings, and some of his personal belongings. There is also a library and photo gallery in the complex.
+
+Calico Museum
+One of the oldest textile museums in the country, the Calico Museum spans 12 rooms and sits amid a spacious garden. The museum houses costumes and carpets from rulers as well as religious clothes and temple textiles. There is also galleries about textile techniques and museum authorities organize workshops for the public.
 
 Food
-stuff
+Ahmedabad is well known for its streetfoods. Dhokla is a spongy dish made of fermented rice and chickpeas typically eaten with green or Meethi chutneys. The crunchy, spiced gram flour fafda is often served alongside jalebi, a sweet deep fried maida flour shaped like pretzels. 
